@@ -1,0 +1,27 @@
+.content-section {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  /* background: var(--color-bg); */
+  margin-left: auto;
+  z-index: 1;
+  position: absolute;
+}
+
+.content-blank {
+
+}
+
+@media (max-width: 960px) {
+  .content-section {
+    grid-template-columns: 1fr;
+    min-height: 100vh;
+    display: grid;
+    inset: 0;
+    position: relative;
+  }
+
+  .content-blank {
+    display: none;
+  }
+}
