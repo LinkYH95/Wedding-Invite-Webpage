@@ -1,11 +1,24 @@
 .content-section {
   min-height: 100vh;
+  /* height: 100vh; */
+  /* overflow-y: auto; */
   display: grid;
   grid-template-columns: 3fr 2fr;
   /* background: var(--color-bg); */
   margin-left: auto;
   z-index: 1;
   position: absolute;
+}
+
+.content-section-s {
+  min-height: 100vh;
+  /* height: 100vh; */
+  /* overflow-y: auto; */
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  /* background: var(--color-bg); */
+  margin-left: auto;
+  z-index: 1;
 }
 
 .content {
