@@ -1,0 +1,122 @@
+.picture-close {
+  z-index: 1200;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1.6rem;
+  line-height: 1;
+  color: #333;
+}
+
+.picture-hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.picture-hamburger span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: #333;
+  display: block;
+}
+
+.picture-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.18);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 1201;
+}
+
+.picture-backdrop.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.picture-model {
+  position: fixed;
+  z-index: 1201;
+  height: 80vh;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  padding: 28px 28px 40px;
+}
+
+.picture-model.open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.drawer-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.drawer-brand {
+  font-family: "Great Vibes", cursive;
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  line-height: 1;
+  color: #d4b45b;
+}
+
+.drawer-close-button {
+  border: none;
+  background: transparent;
+  color: #d4b45b;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+.drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin-top: 8px;
+}
+
+.drawer-link {
+  font-size: 1.15rem;
+  color: #d4b45b;
+  text-decoration: none;
+}
+
+.drawer-link:hover {
+  opacity: 0.8;
+}
+
+@media (min-width: 768px) {
+  .picture-close {
+    width: 44px;
+    height: 44px;
+  }
+
+  .picture-model {
+    padding: 32px 32px 48px;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .drawer-link {
+    font-size: 1.25rem;
+  }
+}

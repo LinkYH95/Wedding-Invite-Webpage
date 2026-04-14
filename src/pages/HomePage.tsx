@@ -2,11 +2,15 @@ import ContentSection from "../components/ContentSection"
 import HeroSection from "../components/HeroSection"
 import './HomePage.css'
 
-export default function HomePage() {
+type HomePageProp = {
+  onClickImage: (src: any) => void
+}
+
+export default function HomePage({ onClickImage }: HomePageProp) {
 	return (
 		<div className="homepage">
 			<HeroSection/>
-			<ContentSection/>
+			<ContentSection onClickImage={(onClickImage)}/>
 		</div>
 	)
 }
