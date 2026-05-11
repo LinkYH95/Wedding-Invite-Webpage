@@ -1,4 +1,5 @@
 import './HeroSection.css'
+import hero1 from "../assets/DSC_2753.jpg"
 
 type HeroSectionProps = {
 }
@@ -8,7 +9,7 @@ export default function HeroSection({}: HeroSectionProps) {
     <section className="hero-section">
       <div className="hero-image-panel">
         <img
-          src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1200&q=80"
+          src={hero1}
           alt="Wedding hero"
           className="hero-image"
         />

@@ -18,9 +18,9 @@ export default function ContentSection({ onClickImage }: ContentSectionProps) {
       <div className="card-main">
         <img src={leftTop} className="corner top-left"/>
         <img src={leftBottom} className="corner bottom-right"/>
-        <h1 className="date-header">Thursday<br/>December 31, 2026</h1>
+        <h1 className="date-header">Thursday<br/>October 25, 2026</h1>
         <p className="address-header">Vineyard @ Hortpark</p>
-        <p className="text-header">123 days 20 hrs 25 mins</p>
+        {/* <p className="text-header">123 days 20 hrs 25 mins</p> */}
         <button className="primary-button">RSVP</button>
       </div>
     </ContentCard>
