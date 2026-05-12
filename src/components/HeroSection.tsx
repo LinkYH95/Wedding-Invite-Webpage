@@ -1,5 +1,5 @@
 import './HeroSection.css'
-import hero1 from "../assets/DSC_2753.jpg"
+import hero1 from "../assets/DSC_2754.png"
 
 type HeroSectionProps = {
 }
