@@ -1,21 +1,21 @@
+/* ── App shell ───────────────────────────────────────────── */
 .app {
   min-height: 100vh;
 }
 
-/* Centered content */
+/* ── Layout ──────────────────────────────────────────────── */
 .content-container {
   width: min(100% - 32px, var(--container-width));
   margin: 0 auto;
 }
 
-/* Section spacing */
 .section {
   padding: var(--space-3xl) 0;
 }
 
-/* Typography helpers */
+/* ── Typography helpers ──────────────────────────────────── */
 .section-title {
-  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-size: var(--text-hero);
   text-align: center;
 }
 
@@ -23,29 +23,29 @@
   max-width: 720px;
   margin: 0 auto;
   text-align: center;
-  color: var(--color-muted);
 }
 
-/* Button */
+/* ── Button ──────────────────────────────────────────────── */
 .primary-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   padding: 12px 22px;
-  border-radius: 999px;
-  background: var(--color-accent);
+  border-radius: var(--radius-full);
+  background: var(--color-brown);
   color: white;
+  font-size: var(--text-sm);
   border: none;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .primary-button:hover {
-  background: var(--color-accent-dark);
+  background: var(--color-brown-dark);
   transform: translateY(-1px);
 }
 
-/* Simple responsive adjustment */
+/* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 768px) {
   .section {
     padding: var(--space-2xl) 0;

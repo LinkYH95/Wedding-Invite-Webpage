@@ -1,0 +1,18 @@
+.home-page {
+  position: relative;
+}
+
+.home-content {
+  position: relative;
+  margin-left: 60%;
+  width: 40%;
+  min-height: 100vh;
+  z-index: var(--z-raised);
+}
+
+@media (max-width: 960px) {
+  .home-content {
+    margin-left: 0;
+    width: 100%;
+  }
+}

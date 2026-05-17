@@ -1,18 +1,27 @@
-import { useState } from 'react';
+/* ── import styles ──────────────────────────────────────────────── */
 import './App.css'
-import Navbar from './components/Navbar'
-import PictureOverlay from './components/PictuerOverlay'
-import HomePage from './pages/HomePage'
+/* ── import external libraries ──────────────────────────────────── */
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+/* ── import internal components ─────────────────────────────────── */
+import HomePage from './pages/HomePage/HomePage'
+import RSVPPage from './pages/RsvpPage/RsvpPage';
+/* ── import context / hooks ─────────────────────────────────────── */
+import { ImageModalProvider } from './components/ImageModalContext';
+
 
 export default function App() {
-  const [picSrc, setPicSrc] = useState<string>("");
-  let showPicOverlay = !!picSrc
+  /* ── Constants ────────────────────────────────────────────────── */
+  const eventTime = new Date("2026-10-25T18:00:00+08:00")
 
+  /* ── Render ───────────────────────────────────────────────────── */
   return (
-    <>
-      <Navbar/>
-      <PictureOverlay isOpen={showPicOverlay} picSrc={picSrc} onClose={() => setPicSrc("")}/>
-      <HomePage onClickImage={(src: any) => setPicSrc(src)}/>
-    </>
+    <BrowserRouter>
+      <ImageModalProvider>
+        <Routes>
+          <Route path='/' element={<HomePage eventTime={eventTime}/>}/>
+          <Route path='/rsvp' element={<RSVPPage />}/>
+        </Routes>
+      </ImageModalProvider>
+    </BrowserRouter>
   )
 }
