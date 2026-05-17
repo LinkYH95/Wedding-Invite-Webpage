@@ -2,13 +2,13 @@
 import "./RsvpPage.css";
 /* ── import external libraries ──────────────────────────────────── */
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 /* ── import internal components ─────────────────────────────────── */
 import CollapsibleSection from "./Collapsible/Collapsible";
 /* ── import context / hooks ─────────────────────────────────────── */
 import { useImageModal } from "../../components/ImageModalContext";
 /* ── import utils ───────────────────────────────────────────────── */
-import { testSaveRSVP } from "../../utils/testRsvpService";
+// import { testSaveRSVP } from "../../utils/testRsvpService";
 /* ── import assets ──────────────────────────────────────────────── */
 import hero1 from "../../assets/DSC_2754.png"
 import weddingMenu from "../../assets/Wedding-Menu.png"
@@ -18,21 +18,6 @@ import AdminField from "./Collapsible/AdminField";
 
 /* ── Types ──────────────────────────────────────────────────────── */
 type Step = "code" | "form" | "";
-type AdminFieldProp = {
-  guestID?: string,
-  guestName?: string,
-  attending?: boolean,
-  menuSelection?: string | null,
-  coldStarter?: string | null,
-  hotAppetizer?: string | null,
-  soup?: string | null,
-  mains?: string | null,
-  dessert?: string | null,
-  dietaryRestriction?: string,
-  submitted?: boolean,
-  submittedAt?: Date | null,
-  updatedAt?: Date | null,
-}
 
 export default function RSVPPage() {
   /* ── Constant ─────────────────────────────────────────────────── */
@@ -98,19 +83,19 @@ export default function RSVPPage() {
 
   const [rsvps, setRsvp] = useState(initialRsvps)
 
-  const defaultData = {
-    guestID: '',
-    guestName: '',
-    attending: true,
-    menuSelection: null,
-    coldStarter: null,
-    hotAppetizer: null,
-    soup: null,
-    mains: null,
-    dessert: null,
-    dietaryRestriction: '',
-    submitted: false,
-  }
+  // const defaultData = {
+  //   guestID: '',
+  //   guestName: '',
+  //   attending: true,
+  //   menuSelection: null,
+  //   coldStarter: null,
+  //   hotAppetizer: null,
+  //   soup: null,
+  //   mains: null,
+  //   dessert: null,
+  //   dietaryRestriction: '',
+  //   submitted: false,
+  // }
 
   const getMemberArray = () => {
     const arr: any = [];
@@ -130,25 +115,25 @@ export default function RSVPPage() {
     }))
   }
 
-  const setUpdateInput = (object: any) => {
-    const result = {[object.guestID]: object}
-    updateInput((prev: any) => ({
-      ...prev,
-      ...result 
-    }));
-    updatetemp(defaultData)
-  }
+  // const setUpdateInput = (object: any) => {
+  //   const result = {[object.guestID]: object}
+  //   updateInput((prev: any) => ({
+  //     ...prev,
+  //     ...result 
+  //   }));
+  //   updatetemp(defaultData)
+  // }
 
   /* ── Hooks ────────────────────────────────────────────────────── */
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const { openImage } = useImageModal()
   const [step, setStep] = useState<Step>("code");
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const [isAdmin, setAdmin] = useState(false);
   // const [householdData, setHouseholdData] = useState<any>({ isAdmin: false }); // replace any with your household type
-  const [inputs, updateInput]: any = useState({})
-  const [temp, updatetemp]: any = useState(defaultData)
+  const [inputs]: any = useState({})
+  // const [temp, updatetemp]: any = useState(defaultData)
 
   // ── Replace this with your actual Firebase lookup ────────────
   const handleCodeSubmit = async () => {
