@@ -1,17 +1,21 @@
+/* ── import styles ──────────────────────────────────────────────── */
 import './ContentCard.css'
 
+
+/* ── prop ───────────────────────────────────────────────────────── */
 type ContentCardProps = {
   children?: React.ReactNode
   style?: React.CSSProperties
   type?: "primary" | "secondary" | "photo"
 }
 
+
 export default function ContentCard({
   children,
-  // style,
   type = "secondary",
 }: ContentCardProps) {
 
+  /* ── Conditional Styling ───────────────────────────────────────── */
   let contentCardStyle = {};
   let contentStyle = { padding: "20px" };
 
@@ -28,14 +32,13 @@ export default function ContentCard({
       break;
   } 
 
+  /* ── Render ────────────────────────────────────────────────────── */
   return (
     <div className="content-card" style={{ ...contentCardStyle }}>
       <div className="content-blank"/>
       <div style={{ ...contentStyle }}>
         {children}
       </div>
-      {/* <div className="content" style={{ gap: "50px" }}> */}
-      {/* </div> */}
     </div>
   );
 }

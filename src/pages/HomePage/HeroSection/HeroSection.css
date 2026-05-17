@@ -1,17 +1,16 @@
 .hero-section {
-  top: 0;
   position: fixed;
-  min-height: 100vh;
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  inset: 0;
-  z-index: 0;
-  /* background: var(--color-bg); */
+  top: 0;
+  left: 0;
+  width: 60%;
+  height: 100vh;
+  z-index: var(--z-base);
 }
 
 .hero-image-panel {
   position: relative;
-  min-height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 
 .hero-image {
@@ -29,7 +28,7 @@
 
 .hero-image-overlay {
   max-width: 700px;
-  padding: 24px;
+  padding: var(--space-lg);
   background: rgba(47, 42, 38, 0.2);
   backdrop-filter: blur(2px);
   border-radius: var(--radius-sm);
@@ -37,10 +36,10 @@
 }
 
 .hero-overlay-title {
-  font-family: "Great Vibes", cursive;
+  font-family: var(--font-cursive);
   font-weight: 400;
-  font-size: clamp(3rem, 4vw, 3.5rem);
-  margin-bottom: 12px;
+  font-size: clamp(2.8rem, 4vw, 3.5rem);
+  margin-bottom: var(--space-xs);
 }
 
 .hero-overlay-text {
@@ -50,11 +49,11 @@
 }
 
 .hero-overlay-actions {
-  margin-top: 16px;
+  margin-top: var(--space-md);
   display: flex;
   align-items: center;
-  justify-content: end;
-  gap: 12px;
+  justify-content: flex-end;
+  gap: var(--space-sm);
   flex-wrap: wrap;
 }
 
@@ -65,23 +64,8 @@
 
 @media (max-width: 960px) {
   .hero-section {
-    position: initial;
-    grid-template-columns: 1fr;
-    min-height: 100vh;
-    display: grid;
-    inset: 0;
+    position: relative;
+    width: 100%;
+    height: 100vh;
   }
-
-  .hero-image-panel {
-    min-height: 60vh;
-  }
-
-  .hero-image-overlay {
-    left: 20px;
-    right: 20px;
-    bottom: 20px;
-    max-width: none;
-    padding: 20px;
-  }
-  
 }

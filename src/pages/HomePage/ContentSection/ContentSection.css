@@ -1,24 +1,16 @@
 .content-section {
   min-height: 100vh;
-  /* height: 100vh; */
-  /* overflow-y: auto; */
-  display: grid;
-  grid-template-columns: 3fr 2fr;
-  /* background: var(--color-bg); */
-  margin-left: auto;
-  z-index: 1;
-  position: absolute;
+  position: relative;
+  margin-left: 60%;
+  z-index: var(--z-raised);
 }
 
 .content-section-s {
   min-height: 100vh;
-  /* height: 100vh; */
-  /* overflow-y: auto; */
   display: grid;
   grid-template-columns: 3fr 2fr;
-  /* background: var(--color-bg); */
   margin-left: auto;
-  z-index: 1;
+  z-index: calc(--z-base + 1);
 }
 
 .content {
@@ -50,7 +42,7 @@
   align-items: center;
   justify-content: center;
   position: relative; 
-  min-width: 40vw;
+  min-width: 40%;
   overflow: hidden;
   font-size: 2rem;
   height: 100vh;
@@ -100,6 +92,7 @@
     display: grid;
     inset: 0;
     position: relative;
+    margin-left: 0;
   }
 
   .content-blank {

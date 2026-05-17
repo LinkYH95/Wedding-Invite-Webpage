@@ -1,56 +1,80 @@
 :root {
-  /* Colors */
-  --color-bg: #f8f5f0;
-  --color-surface: #fffdf9;
-  --color-text: #2f2a26;
-  --color-muted: #6f675f;
-  --color-accent: #8fa48b;
-  --color-accent-dark: #6f856c;
-  --color-border: #e8e0d6;
+  /* ── Colors ──────────────────────────────────────────────── */
+  --color-cream:        #f5f0e8;
+  --color-cream-dark:   #ede6d6;
+  --color-brown:        #3b2f2f;
+  --color-brown-dark:   #2c2121;
+  --color-brown-light:  #6b5344;
+  --color-accent:       #8fa48b;
+  --color-accent-dark:  #6f856c;
+  --color-border:       #e8e0d6;
+  --color-gold:         #b89c6e;
+  --color-gold-light:   #d4b896;
+  --color-error:        #c0392b;
 
-  /* Typography */
+  /* ── Typography ──────────────────────────────────────────── */
   --font-heading: "Cormorant Garamond", serif;
-  --font-body: "Cormorant Garamond", system-ui, sans-serif;
+  --font-body:    "Cormorant Garamond", serif;
+  --font-cursive: "Great Vibes", cursive;
 
-  /* Layout */
-  --container-width: 1120px;
+  --text-xs:   clamp(0.7rem,  1.2vw, 0.78rem);  /* labels */
+  --text-sm:   clamp(0.8rem,  1.5vw, 0.88rem);  /* back button, submit */
+  --text-base: clamp(0.9rem,  1.8vw, 1rem);     /* body, inputs, radio */
+  --text-md:   clamp(1rem,    2vw,   1.1rem);   /* instruction, subtitle */
+  --text-lg:   clamp(1rem,    2.2vw, 1.2rem);   /* eyebrow, member name */
+  --text-xl:   clamp(1.3rem,  3vw,   1.6rem);   /* section headers */
+  --text-2xl:  clamp(1.8rem,  4vw,   2.2rem);   /* page titles */
+  --text-hero: clamp(2.8rem,  7vw,   4.5rem);   /* hero title */
 
-  /* Spacing */
-  --space-xs: 8px;
-  --space-sm: 12px;
-  --space-md: 16px;
-  --space-lg: 24px;
-  --space-xl: 40px;
-  --space-2xl: 64px;
-  --space-3xl: 96px;
+  /* ── Spacing ─────────────────────────────────────────────── */
+  --space-nil: 0px;
+  --space-2xs:  clamp(2px,  0.5vw,  4px);
+  --space-xs:  clamp(6px,  1vw,  8px);
+  --space-sm:  clamp(8px,  1.5vw, 12px);
+  --space-md:  clamp(12px, 2vw,  16px);
+  --space-lg:  clamp(16px, 3vw,  24px);
+  --space-xl:  clamp(24px, 4vw,  40px);
+  --space-2xl: clamp(40px, 6vw,  64px);
+  --space-3xl: clamp(64px, 8vw,  96px);
 
-  /* Radius */
+  /* ── Radius ──────────────────────────────────────────────── */
+  --radius-xs: 2px;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* ── Layout ──────────────────────────────────────────────── */
+  --container-width: 1120px;
+
+  /* ── Z-index ─────────────────────────────────────────────── */
+  --z-below:   -1;   /* backgrounds, pseudo-elements behind content */
+  --z-base:     0;   /* default stacking */
+  --z-raised:  10;   /* cards, dropdowns, tooltips */
+  --z-overlay: 100;  /* modals, drawers, image overlays */
+  --z-navbar:  200;  /* navbar, always on top of content */
+  --z-toast:   300;  /* notifications, above everything */
 }
 
-/* Reset */
-*,
-*::before,
-*::after {
+/* ── Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
   scroll-behavior: smooth;
-  scrollbar-gutter: stable;
 }
 
 body {
   margin: 0;
-  background: var(--color-bg);
-  color: var(--color-text);
+  background: var(--color-cream);
+  color: var(--color-brown);
   font-family: var(--font-body);
+  font-size: var(--text-base);
   line-height: 1.6;
 }
 
-/* Elements */
+/* ── Base elements ───────────────────────────────────────── */
 img {
   max-width: 100%;
   display: block;
