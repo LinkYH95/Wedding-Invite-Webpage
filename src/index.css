@@ -11,6 +11,8 @@
   --color-gold:         #b89c6e;
   --color-gold-light:   #d4b896;
   --color-error:        #c0392b;
+  --color-placeholder:  #919191;
+  --color-hyperlink:    #32670c;
 
   /* ── Typography ──────────────────────────────────────────── */
   --font-heading: "Cormorant Garamond", serif;
@@ -38,7 +40,7 @@
   --space-3xl: clamp(64px, 8vw,  96px);
 
   /* ── Radius ──────────────────────────────────────────────── */
-  --radius-xs: 2px;
+  --radius-xs: 4px;
   --radius-sm: 8px;
   --radius-md: 14px;
   --radius-lg: 24px;
