@@ -1,20 +1,25 @@
 /* ── Variables (extend your existing ones) ──────────────────── */
 :root {
-  --rsvp-card-width: min(560px, 100% - 32px);
+  /* --admin-card-width: min(560px, 100% - 32px); */
 }
  
 /* ── Page Layout ─────────────────────────────────────────────── */
-.rsvp-page {
+.admin-page {
   position: relative;
-  min-height: 100vh;
+  height: 100dvh;
+  min-height: 100dvh;
+  max-height: 100dvh;
+
   display: flex;
-  align-items: flex-start;
   justify-content: center;
-  overflow: hidden; /* clips the blurred bg */
+
+  overflow: hidden;
+  padding: var(--space-xl) var(--space-lg);
+  box-sizing: border-box;
 }
  
 /* Blurred background — swap src for your actual wedding photo */
-.rsvp-bg {
+.admin-bg {
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -25,31 +30,44 @@
 }
  
 /* ── Scrollable centre column ─────────────────────────────────── */
-.rsvp-scroll-area {
+.admin-scroll-area {
   position: relative;
   z-index: 1;
+
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  padding: 60px 24px 80px;
-  overflow-y: auto;
+  flex: 1;
+
+  min-height: 0;
+  min-width: 0;
+
+  overflow: auto;
   scrollbar-gutter: stable;
+
+  box-sizing: border-box;
 }
  
 /* ── Card ─────────────────────────────────────────────────────── */
-.rsvp-card {
+.admin-card {
   width: 100%;
-  max-width: var(--rsvp-card-width);
-  background: var(--color-cream);
+  background: #f5f0e8;
   backdrop-filter: blur(8px);
   border-radius: 4px;
-  padding: var(--space-lg) var(--space-lg);
+
+  display: flex;
+  flex-direction: column;
+
+  padding: var(--space-lg) 0px 0px var(--space-lg);
+  box-sizing: border-box;
+
   box-shadow:
     0 8px 32px rgba(59, 47, 47, 0.18),
     0 1px 0 rgba(184, 156, 110, 0.3) inset;
+
   position: relative;
+
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .icon-button {
@@ -59,51 +77,54 @@
 }
  
 /* ── Back button ─────────────────────────────────────────────── */
-.rsvp-back {
-  background: var(--color-cream);
+.admin-back {
+  background: transparent;
   border: none;
   cursor: pointer;
   color: var(--color-brown-light);
   font-size: var(--text-sm);
   letter-spacing: 0.05em;
   padding: var(--space-xs);
-  margin-bottom: 32px;
+  margin-bottom: 8px;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   transition: color 0.2s ease, gap 0.2s ease;
+  text-shadow: 0px 0px 5px white;
   border-radius: var(--space-2xs);
+  font-weight: bold;
 }
  
-.rsvp-back:hover {
-  filter: brightness(0.9);
-  gap: 10px;
+.admin-back:hover {
+  background: #f5f0e83d;
 }
  
 /* ── Header ──────────────────────────────────────────────────── */
-.rsvp-header {
+.admin-header {
   text-align: center;
   margin-bottom: 24px;
 }
  
-.rsvp-eyebrow {
+.admin-eyebrow {
   font-size: var(--text-lg);
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--rsvp-gold);
+  color: var(--admin-gold);
   margin-bottom: 8px;
 }
  
-.rsvp-title {
-  font-family: "Great Vibes", cursive;
-  font-size: var(--text-hero);
+.admin-title {
+  font-family: emoji;
+  font-size: var(--text-2xl);
   font-weight: 500;
   color: var(--color-brown);
   line-height: 1;
+  text-shadow: 0px 0px 5px white;
   margin-bottom: 8px;
+  text-align: center;
 }
  
-.rsvp-subtitle {
+.admin-subtitle {
   font-size: var(--text-md);
   letter-spacing: 0.1em;
   color: var(--color-brown-light);
@@ -111,7 +132,7 @@
 }
  
 /* ── Divider ─────────────────────────────────────────────────── */
-.rsvp-divider {
+.admin-divider {
   height: 1px;
   background: linear-gradient(
     to right,
@@ -123,14 +144,15 @@
 }
  
 /* ── Steps ───────────────────────────────────────────────────── */
-.rsvp-step {
+.admin-step {
   display: flex;
   flex-direction: column;
   gap: 20px;
+  align-items: center;
 }
  
-.rsvp-instruction {
-  font-size: var(--text-md);
+.admin-instruction {
+  font-size: var(--text-2xl);
   color: var(--color-brown-light);
   text-align: center;
   line-height: 1.6;
@@ -147,14 +169,14 @@
 }
  
 /* ── Fields ──────────────────────────────────────────────────── */
-.rsvp-field {
+.admin-field {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 8px;
   font-size: var(--text-md);
 }
  
-.rsvp-label {
+.admin-label {
   font-size: var(--text-md);
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -163,12 +185,12 @@
 }
  
 /* ── Inputs ──────────────────────────────────────────────────── */
-.rsvp-input {
+.admin-input {
   width: 100%;
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--rsvp-gold-light);
-  border-radius: var(--rsvp-radius);
+  border: 1px solid var(--admin-gold-light);
+  border-radius: var(--admin-radius);
   font-size: var(--text-base);
   color: var(--color-brown);
   outline: none;
@@ -176,13 +198,13 @@
   box-sizing: border-box;
 }
  
-.rsvp-input:focus {
-  border-color: var(--rsvp-gold);
+.admin-input:focus {
+  border-color: var(--admin-gold);
   background: rgba(255, 255, 255, 0.85);
   box-shadow: 0 0 0 3px rgba(184, 156, 110, 0.15);
 }
  
-.rsvp-input--code {
+.admin-input--code {
   text-align: center;
   font-size: var(--text-lg);
   letter-spacing: 0.1em;
@@ -190,8 +212,8 @@
   font-weight: 500;
 }
  
-.rsvp-input--error {
-  border-color: var(--rsvp-error);
+.admin-input--error {
+  border-color: var(--admin-error);
   box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.1);
 }
 
@@ -200,12 +222,12 @@
 }
  
 /* ── Select ──────────────────────────────────────────────────── */
-.rsvp-select {
+.admin-select {
   width: 100%;
   padding: 12px 16px;
   background: rgba(255, 255, 255, 0.6);
-  border: 1px solid var(--rsvp-gold-light);
-  border-radius: var(--rsvp-radius);
+  border: 1px solid var(--admin-gold-light);
+  border-radius: var(--admin-radius);
   font-size: var(--text-base);
   color: var(--color-brown);
   outline: none;
@@ -218,20 +240,20 @@
   padding-right: 40px;
 }
  
-.rsvp-select:focus {
-  border-color: var(--rsvp-gold);
+.admin-select:focus {
+  border-color: var(--admin-gold);
   box-shadow: 0 0 0 3px rgba(184, 156, 110, 0.15);
 }
  
 /* ── Radio group ─────────────────────────────────────────────── */
-.rsvp-radio-group {
+.admin-radio-group {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
   font-weight: bold;
 }
  
-.rsvp-radio {
+.admin-radio {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -239,46 +261,46 @@
   font-size: var(--text-base);
   color: var(--color-brown);
   padding: 10px 16px;
-  border: 1px solid var(--rsvp-gold-light);
-  border-radius: var(--rsvp-radius);
+  border: 1px solid var(--admin-gold-light);
+  border-radius: var(--admin-radius);
   background: rgba(255,255,255,0.4);
   transition: background 0.2s ease, border-color 0.2s ease;
   flex: 1;
   justify-content: center;
 }
  
-.rsvp-radio:has(input:checked) {
+.admin-radio:has(input:checked) {
   background: rgba(184, 156, 110, 0.15);
-  border-color: var(--rsvp-gold);
+  border-color: var(--admin-gold);
 }
  
-.rsvp-radio input {
-  accent-color: var(--rsvp-gold);
+.admin-radio input {
+  accent-color: var(--admin-gold);
 }
  
 /* ── Error message ───────────────────────────────────────────── */
-.rsvp-error {
+.admin-error {
   font-size: var(--text-sm);
   font-weight: bold;
-  color: var(--rsvp-error);
+  color: var(--admin-error);
   margin: 0;
-  animation: rsvp-shake 0.3s ease;
+  animation: admin-shake 0.3s ease;
 }
  
-@keyframes rsvp-shake {
+@keyframes admin-shake {
   0%, 100% { transform: translateX(0); }
   25%       { transform: translateX(-6px); }
   75%       { transform: translateX(6px); }
 }
  
 /* ── Submit button ───────────────────────────────────────────── */
-.rsvp-submit {
-  width: 100%;
+.admin-submit {
+  width: fit-content;
   padding: 0px;
   background: var(--color-brown);
   color: var(--color-cream);
   border: none;
-  border-radius: var(--rsvp-radius);
+  border-radius: var(--admin-radius);
   font-size: var(--text-sm);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -287,22 +309,22 @@
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.rsvp-submit:hover {
+.admin-submit:hover {
   filter: brightness(1.2);
   box-shadow: 0 4px 16px rgba(59, 47, 47, 0.2);
 }
  
-.rsvp-submit:active {
+.admin-submit:active {
   transform: translateY(0);
 }
 
-.rsvp-cancel {
+.admin-cancel {
   width: 100%;
   padding: 0px;
   background: var(--color-cream-dark);
   color: var(--color-brown);
   border: none;
-  border-radius: var(--rsvp-radius);
+  border-radius: var(--admin-radius);
   font-size: var(--text-sm);
   letter-spacing: 0.15em;
   text-transform: uppercase;
@@ -311,12 +333,12 @@
   transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
 }
 
-.rsvp-cancel:hover {
+.admin-cancel:hover {
   filter: brightness(0.9);
 }
  
 /* ── Member blocks ───────────────────────────────────────────── */
-.rsvp-member {
+.admin-member {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -340,24 +362,40 @@
   margin: var(--space-xs);
 }
  
-.rsvp-member-divider {
+.admin-member-divider {
   height: 1px;
-  background: var(--rsvp-cream-dark);
+  background: var(--admin-cream-dark);
   margin: 8px 0;
 }
- 
+.admin-rsvp-table-wrapper {
+  width: 100%;
+  min-width: 0;
+}
+
+.admin-rsvp-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: visible;
+}
+
+.admin-rsvp-table {
+  width: max-content;
+  min-width: 100%;
+  border-collapse: collapse;
+}
 /* ── Mobile ──────────────────────────────────────────────────── */
 @media (max-width: 600px) {
-  .rsvp-scroll-area {
+  .admin-scroll-area {
     padding: 32px 16px 60px;
     align-items: flex-start;
   }
  
-  .rsvp-radio-group {
+  .admin-radio-group {
     flex-direction: column;
   }
  
-  .rsvp-radio {
+  .admin-radio {
     flex: unset;
     justify-content: flex-start;
   }

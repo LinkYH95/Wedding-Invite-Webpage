@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 /* ── import internal components ─────────────────────────────────── */
 import HomePage from './pages/HomePage/HomePage'
 import RSVPPage from './pages/RsvpPage/RsvpPage';
+import AdminPage from './pages/Admin/Admin';
 /* ── import context / hooks ─────────────────────────────────────── */
 import { ImageModalProvider } from './components/ImageModalContext';
 
@@ -20,6 +21,7 @@ export default function App() {
         <Routes>
           <Route path='/' element={<HomePage eventTime={eventTime}/>}/>
           <Route path='/rsvp' element={<RSVPPage />}/>
+          <Route path='/admin' element={<AdminPage />}/>
         </Routes>
       </ImageModalProvider>
     </BrowserRouter>
