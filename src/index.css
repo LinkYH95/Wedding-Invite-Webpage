@@ -15,9 +15,9 @@
   --color-hyperlink:    #32670c;
 
   /* ── Typography ──────────────────────────────────────────── */
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body:    "Cormorant Garamond", serif;
-  --font-cursive: "Great Vibes", cursive;
+  --font-heading: "Cormorant Garamond", 'Noto Serif SC', serif;
+  --font-body:    "Cormorant Garamond", 'Noto Serif SC', serif;
+  --font-cursive: "Great Vibes", 'Noto Serif SC', cursive;
 
   --text-xs:   clamp(0.7rem,  1.2vw, 0.78rem);  /* labels */
   --text-sm:   clamp(0.8rem,  1.5vw, 0.88rem);  /* back button, submit */

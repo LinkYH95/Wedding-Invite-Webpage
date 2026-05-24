@@ -4,6 +4,7 @@ import { db } from "../firebase";
 interface GuestEntry {
   guestID?: string,
   guestName?: string,
+  isChild?: boolean | null,
   attending?: string | null,
   menuSelection?: string | null,
   coldStarter?: string | null,
@@ -25,6 +26,7 @@ export async function batchSaveRSVP(rsvps: Record<string, GuestEntry>) {
 
     batch.set(ref, {
       ...data,
+      isChild: data.isChild || null, 
       guestID,
       updatedAt: serverTimestamp(),
     });
