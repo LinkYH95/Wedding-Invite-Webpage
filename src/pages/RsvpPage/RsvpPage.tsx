@@ -39,6 +39,10 @@ export default function RSVPPage() {
   /* ── Hooks ────────────────────────────────────────────────────── */
   useEffect(() => {
     const codeFromUrl = searchParams.get('code')
+    const lanFromUrl = searchParams.get('zh')
+    if (lanFromUrl === 'zh') {
+      i18n.changeLanguage('zh')
+    }
     if (codeFromUrl) {
       setCode(codeFromUrl);
       handleCodeSubmit(codeFromUrl);
