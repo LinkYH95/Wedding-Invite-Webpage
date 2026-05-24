@@ -1,9 +1,11 @@
 /* ── import styles ──────────────────────────────────────────────── */
 import "./RsvpPage.css";
 /* ── import external libraries ──────────────────────────────────── */
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useSearchParams } from 'react-router-dom'
 /* ── import internal components ─────────────────────────────────── */
 import CollapsibleSection from "./Collapsible/Collapsible";
+import { useTranslation } from "react-i18next";
 /* ── import Page ────────────────────────────────────────────────── */
 import AdminField from "./Collapsible/AdminField";
 import { getInviteGroupWithRsvps } from "../../utils/retrieveRsvps";
@@ -14,6 +16,7 @@ import { useImageModal } from "../../components/ImageModalContext";
 /* ── import assets ──────────────────────────────────────────────── */
 import hero1 from "../../assets/DSC_2754.png"
 import weddingMenu from "../../assets/Wedding-Menu.png"
+import weddingMenuChild from "../../assets/Wedding-Menu-Child.png"
 import CodeInputField from "./InvitationCodeInput/InvitationCodeInput";
 
 
@@ -24,19 +27,31 @@ export default function RSVPPage() {
   /* ── Constant ─────────────────────────────────────────────────── */
   const { openImage } = useImageModal()
   const [step, setStep] = useState<Step>("code");
+  const [searchParams] = useSearchParams()
   const [code, setCode] = useState("");
   const [error, setError] = useState("");
   const [inviteDetails, setInviteDetails] = useState<any>(null);
 
+  const { t } = useTranslation();
+  const { i18n } = useTranslation();
+  const isEn = i18n.language === 'en';
 
   /* ── Hooks ────────────────────────────────────────────────────── */
-  const handleCodeSubmit = async () => {
+  useEffect(() => {
+    const codeFromUrl = searchParams.get('code')
+    if (codeFromUrl) {
+      setCode(codeFromUrl);
+      handleCodeSubmit(codeFromUrl);
+    }
+  }, [])
+
+  const handleCodeSubmit = async (overrideCode?: string) => {
     setError("");
 
-    const trimmedCode = code.trim().toUpperCase();
+    const trimmedCode = (overrideCode ?? code).trim().toUpperCase();
 
     if (!trimmedCode) {
-      setError("Please enter your invitation code.");
+      setError(t('rsvp.error_blank_code'));
       return;
     }
 
@@ -56,7 +71,7 @@ export default function RSVPPage() {
       console.error(e);
 
       setInviteDetails(null);
-      setError("Invalid invitation code. Please check and try again.");
+      setError(t('rsvp.error_invalid_code'));
       setStep("code");
     }
   };
@@ -65,7 +80,7 @@ export default function RSVPPage() {
     setError("");
 
     if (!inviteDetails?.rsvps) {
-      setError("No RSVP details found. Please reload your invitation.");
+      setError(t('rsvp.error_no_details'));
       return;
     }
 
@@ -78,7 +93,7 @@ export default function RSVPPage() {
     } catch (error) {
       console.error("Failed to submit RSVP:", error);
 
-      setError("Failed to submit RSVP. Please try again.");
+      setError(t('rsvp.error_submit_fail'));
       setStep("code");
     }
   };
@@ -115,10 +130,10 @@ export default function RSVPPage() {
         return (
           <div className="rsvp-step rsvp-step--form">
             <p className="rsvp-instruction">
-              Welcome,&nbsp;&nbsp;
+              {t('form.welcome')},&nbsp;&nbsp;
               <strong style={{ fontSize: "var(--text-xl)",textDecoration: 'underline' }}>{inviteDetails.groupName}</strong> <strong style={{ fontSize: "var(--text-xl)" }}>!</strong>
-              <br/>Please fill in the details below and select the dinner menu for your household. Please note that if nothing is selected, we will choose the default menu for you.
-              <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>View menu</a>
+              <br/>{t('form.instruction')}
+              <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>{t('form.menu_adult')}</a> &nbsp;|&nbsp; <a className="text-hyperlink" onClick={() => openImage(weddingMenuChild)}>{t('form.menu_kids')}</a>
             </p>
 
             {inviteDetails.memberCodes.map((guestID: string) => {
@@ -126,13 +141,13 @@ export default function RSVPPage() {
 
               if (!guestDetails) return null;
               return (
-                <CollapsibleSection {...guestDetails} onchange={(field: any, value: any) => updateGuestDetails(guestID, field, value)} key={`Collapsible-field-${guestDetails.key}`}/>
+                <CollapsibleSection {...guestDetails} onchange={(field: any, value: any) => updateGuestDetails(guestID, field, value)} key={`Collapsible-field-${guestDetails.id}`}/>
               );
             })}
 
             {/* Submit */}
-            <button className="rsvp-submit" onClick={() => handleSubmitRSVP()}>
-              <h3 className="button-text-dark">Submit RSVP</h3>
+            <button className="rsvp-cancel" onClick={() => handleSubmitRSVP()}>
+              <h3 className="button-text-light">{t('form.submit')}</h3>
             </button>
           </div>
         )
@@ -165,11 +180,15 @@ export default function RSVPPage() {
             </button>
           )}
 
+          <button onClick={() => i18n.changeLanguage(isEn ? 'zh' : 'en')} style={{ float: "inline-end" }}>
+            {isEn ? '中文' : 'EN'}
+          </button>
+
           {/* Header */}
           <div className="rsvp-header">
-            <p className="rsvp-eyebrow">You're invited</p>
+            <p className="rsvp-eyebrow">{t('rsvp.eyebrow')}</p>
             <h1 className="rsvp-title">RSVP</h1>
-            <p className="rsvp-subtitle">Thursday, October 25, 2026</p>
+            <p className="rsvp-subtitle">{t('rsvp.subtitle')}</p>
           </div>
 
           {/* Divider */}

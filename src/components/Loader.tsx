@@ -1,4 +1,5 @@
 import "./Loader.css";
+import { useTranslation } from "react-i18next";
 
 type RsvpLoaderMode = "fetching" | "saving" | "admin_fetching";
 
@@ -6,22 +7,24 @@ type RsvpLoaderProps = {
   mode: RsvpLoaderMode;
 };
 
-const loaderContent = {
-  fetching: {
-    title: "Loading your RSVP details",
-    description: "Please wait while we retrieve your invitation details.",
-  },
-  saving: {
-    title: "Saving your RSVP",
-    description: "Please do not close or refresh this page.",
-  },
-  admin_fetching: {
-    title: "Fetching data",
-    description: " ",
-  },
-};
-
 export default function RsvpLoader({ mode }: RsvpLoaderProps) {
+  const { t } = useTranslation();
+
+  const loaderContent = {
+    fetching: {
+      title: t("loading.fetch_title"),
+      description: t("loading.fetch_desc"),
+    },
+    saving: {
+      title: t("loading.save_title"),
+      description: t("loading.save_desc"),
+    },
+    admin_fetching: {
+      title: t("loading.admin_title"),
+      description: t("loading.admin_desc"),
+    },
+  };
+
   const content = loaderContent[mode];
 
   return (

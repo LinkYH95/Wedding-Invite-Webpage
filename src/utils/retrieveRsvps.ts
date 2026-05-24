@@ -18,7 +18,8 @@ export type RsvpData = {
   id: string;
   guestID: string;
   guestName: string;
-  attending: boolean | null;
+  isChild: boolean | null;
+  attending: string | null;
   menuSelection: string | null;
   coldStarter: string | null;
   hotAppetizer: string | null;
@@ -77,6 +78,7 @@ export const getInviteGroupWithRsvps = async (
       id: rsvpDoc.id,
       guestID: data.guestID,
       guestName: data.guestName,
+      isChild: data.isChild,
       attending: data.attending,
       menuSelection: data.menuSelection,
       coldStarter: data.coldStarter,

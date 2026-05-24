@@ -1,0 +1,67 @@
+{
+  "rsvp": {
+    "eyebrow": "You're invited",
+    "subtitle": "Sunday, October 25, 2026",
+    "instruction": "Enter the invitation code found on your wedding invitation.",
+    "fieldPlaceholder": "enter invitation code",
+    "submit": "Continue",
+    "cancel": "Back",
+    "error_blank_code": "Please enter your invitation code.",
+    "error_invalid_code": "Invalid invitation code. Please check and try again.",
+    "error_no_details": "No RSVP details found. Please reload your invitation.",
+    "error_submit_fail": "Failed to submit RSVP. Please try again."
+  },
+  "form": {
+    "welcome": "Welcome,",
+    "instruction": "Please fill in the details below and select the dinner menu for your household. Please note that if nothing is selected, we will choose the default menu for you.",
+    "menu_adult": "View adult menu",
+    "menu_kids": "View child menu",
+    "submit": "Submit RSVP",
+
+    "attending_label": "Attending?",
+    "attending_yes": "Yes, I'll be there",
+    "attending_no": "Sorry, I can't make it",
+
+    "menu_selection_label": "Menu Selection",
+    "menu_placeholder": "Select a meal",
+    "menu_option_none": "N/A, I will bring my own",
+    "menu_option_child_2": "Child 2-Course Meal",
+    "menu_option_child_4": "Child 4-Course Meal",
+    "menu_option_adult_5": "Adult 5-Course Meal",
+
+    "course_cold_starter": "Cold Starter",
+    "course_hot_appetizer": "Hot Appetizer",
+    "course_soup": "Soup",
+    "course_mains": "Mains",
+    "course_dessert": "Dessert",
+
+    "dietary_label": "Dietary Requirements",
+    "dietary_placeholder": "e.g. Nut allergy, Halal, Vegan...",
+
+    "default_prefix": "Default:",
+
+    "dish_crab_avocado": "Blue Swimmer Crabmeat & Avocado",
+    "dish_beetroot_avocado": "Heirloom Beetroot Tartare & Avocado",
+    "dish_scallop_ikura": "Pan-roasted Hokkaido Scallop & Ikura",
+    "dish_mushroom_scallop": "King Mushroom \"Scallop\" with Seaweed Caviar",
+    "dish_lobster_bisque": "Lobster Bisque",
+    "dish_mushroom_soup": "Locally Grown Mushroom Soup",
+    "dish_chicken_chou_farci": "Farmed Chicken Chou Farci with Foie Gras Poêlé",
+    "dish_salmon": "Herb Crusted Tasmania Salmon",
+    "dish_mango_savarin": "Mango Savarin",
+    "dish_wild_berries_sorbet": "Wild Berries Sorbet (Non-Dairy)",
+    "dish_fish_chips": "Fish and Chips with Tartare Sauce",
+    "dish_mushroom_pasta": "Creamy Mushroom Pasta",
+    "dish_chicken_nuggets": "Chicken Nuggets and Potato Wedges",
+    "dish_mushroom_veloute": "Mushroom Veloute",
+    "dish_chocolate_sorbet": "Chocolate Sorbet with Fruits and Crumble"
+  },
+  "loading": {
+    "fetch_title": "Loading your RSVP details",
+    "fetch_desc": "Please wait while we retrieve your invitation details.",
+    "save_title": "Saving your RSVP",
+    "save_desc": "Please do not close or refresh this page.",
+    "admin_title": "Fetching data",
+    "admin_desc": " "
+  }
+}

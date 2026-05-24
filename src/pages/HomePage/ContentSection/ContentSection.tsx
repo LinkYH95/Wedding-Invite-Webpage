@@ -10,6 +10,7 @@ import { useImageModal } from '../../../components/ImageModalContext'
 /* ── import assets ──────────────────────────────────────────────── */
 import leftTop from "../../../assets/Corner Flower Top (2).png"
 import leftBottom from "../../../assets/Corner Flower Bottom (2).png"
+import image1 from "../../../assets/shoes.png"
 import poloroid1 from "../../../assets/image (3).png"
 import poloroid2 from "../../../assets/image (4).png"
 import poloroid3 from "../../../assets/image (5).png"
@@ -64,7 +65,7 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
     </ContentCard>
     <ContentCard type='photo'>
       <img
-        src="https://images.unsplash.com/photo-1509927083803-4bd519298ac4?auto=format&fit=crop&w=1200&q=80"
+        src={image1}
         alt="Wedding photo 2"
         className="wedding-photo"
       />

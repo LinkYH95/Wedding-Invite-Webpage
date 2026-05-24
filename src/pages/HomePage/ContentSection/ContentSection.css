@@ -85,6 +85,10 @@
   line-height: 1;
 }
 
+.wedding-photo {
+  display: none;
+}
+
 @media (max-width: 960px) {
   .content-section {
     grid-template-columns: 1fr;
@@ -112,6 +116,7 @@
   }
 
   .wedding-photo {
+    display: block;
     width: 100%;
     aspect-ratio: 5 / 3 ;
     object-fit: cover;

@@ -1,0 +1,67 @@
+{
+  "rsvp": {
+    "eyebrow": "诚邀您出席",
+    "subtitle": "农历二零二六年九月十六日，星期日",
+    "instruction": "请输入婚礼请柬上的邀请码。",
+    "fieldPlaceholder": "请输入邀请码",
+    "submit": "继续",
+    "cancel": "返回",
+    "error_blank_code": "请输入您的邀请码。",
+    "error_invalid_code": "邀请码无效。请检查后再试。",
+    "error_no_details": "找到您的出席回复资料。请重新打开邀请链接。",
+    "error_submit_fail": "出席回复提交失败。请再试一次。"
+  },
+  "form": {
+    "welcome": "欢迎，",
+    "instruction": "请填写以下详情并为您的家庭选择晚宴菜单。请注意，如果未作出选择，我们将为您安排默认菜单。",
+    "menu_adult": "查看成人菜单",
+    "menu_kids": "查看儿童菜单",
+    "submit": "提交出席确认",
+
+    "attending_label": "是否出席？",
+    "attending_yes": "是的，我会出席",
+    "attending_no": "抱歉，我无法出席",
+
+    "menu_selection_label": "菜单选择",
+    "menu_placeholder": "请选择餐点",
+    "menu_option_none": "不需要，我会自行安排",
+    "menu_option_child_2": "儿童双道菜套餐",
+    "menu_option_child_4": "儿童四道菜套餐",
+    "menu_option_adult_5": "成人五道菜套餐",
+
+    "course_cold_starter": "冷盘前菜",
+    "course_hot_appetizer": "热盘前菜",
+    "course_soup": "汤品",
+    "course_mains": "主菜",
+    "course_dessert": "甜点",
+
+    "dietary_label": "饮食要求",
+    "dietary_placeholder": "例如：坚果过敏、清真、纯素……",
+
+    "default_prefix": "默认：",
+
+    "dish_crab_avocado": "蓝泳蟹肉配牛油果",
+    "dish_beetroot_avocado": "传统甜菜根他他配牛油果",
+    "dish_scallop_ikura": "煎北海道扇贝配三文鱼籽",
+    "dish_mushroom_scallop": "牛肝菌'扇贝'配海藻鱼子酱",
+    "dish_lobster_bisque": "龙虾浓汤",
+    "dish_mushroom_soup": "本地鲜菌汤",
+    "dish_chicken_chou_farci": "法式酿鸡卷配煎鹅肝",
+    "dish_salmon": "香草脆皮塔斯马尼亚三文鱼",
+    "dish_mango_savarin": "芒果萨瓦兰蛋糕",
+    "dish_wild_berries_sorbet": "野莓雪葩（不含乳制品）",
+    "dish_fish_chips": "炸鱼薯条配塔塔酱",
+    "dish_mushroom_pasta": "忌廉蘑菇意大利面",
+    "dish_chicken_nuggets": "鸡块配薯角",
+    "dish_mushroom_veloute": "蘑菇丝绒汤",
+    "dish_chocolate_sorbet": "朱古力雪葩配水果及酥粒"
+  },
+  "loading": {
+    "fetch_title": "正在加载您的出席回复资料",
+    "fetch_desc": "请稍等，我们正在读取您的邀请资料。",
+    "save_title": "正在保存您的出席回复",
+    "save_desc": "请勿关闭或刷新此页面。",
+    "admin_title": "正在读取资料",
+    "admin_desc": " "
+  }
+}
