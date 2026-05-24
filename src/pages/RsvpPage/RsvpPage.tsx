@@ -39,7 +39,7 @@ export default function RSVPPage() {
   /* ── Hooks ────────────────────────────────────────────────────── */
   useEffect(() => {
     const codeFromUrl = searchParams.get('code')
-    const lanFromUrl = searchParams.get('zh')
+    const lanFromUrl = searchParams.get('lan')
     if (lanFromUrl === 'zh') {
       i18n.changeLanguage('zh')
     }
@@ -134,7 +134,7 @@ export default function RSVPPage() {
         return (
           <div className="rsvp-step rsvp-step--form">
             <p className="rsvp-instruction">
-              {t('form.welcome')},&nbsp;&nbsp;
+              {t('form.welcome')}&nbsp;&nbsp;
               <strong style={{ fontSize: "var(--text-xl)",textDecoration: 'underline' }}>{inviteDetails.groupName}</strong> <strong style={{ fontSize: "var(--text-xl)" }}>!</strong>
               <br/>{t('form.instruction')}
               <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>{t('form.menu_adult')}</a> &nbsp;|&nbsp; <a className="text-hyperlink" onClick={() => openImage(weddingMenuChild)}>{t('form.menu_kids')}</a>
@@ -168,6 +168,7 @@ export default function RSVPPage() {
     }
   }
 
+  console.log(inviteDetails)
   return (
     <div className="rsvp-page">
       {/* Blurred background image */}
