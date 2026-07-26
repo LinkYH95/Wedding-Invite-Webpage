@@ -2,6 +2,17 @@ import { Collapsible, RadioGroup, Select } from "radix-ui"
 import { useState } from "react"
 import './Collapsible.css'
 import { useTranslation } from "react-i18next";
+import starter1 from "../../../assets/starter-crab.jpg"
+import starter2 from "../../../assets/starter-beetroot.jpg"
+import appetizer1 from "../../../assets/appetizer-scallop.jpg"
+import appetizer2 from "../../../assets/appetizer-mushroom scallop.jpg"
+import soup1 from "../../../assets/soup-lobster.jpg"
+import soup2 from "../../../assets/soup-mushroom.jpg"
+import mains1 from "../../../assets/mains-salmon.jpg"
+import mains2 from "../../../assets/mains-chicken.jpg"
+import dessert1 from "../../../assets/dessert-mango.jpg"
+import dessert2 from "../../../assets/dessert-sorbert.jpg"
+import weddingMenuChild from "../../../assets/Wedding-Menu-Child.png"
 
 // ── Reusable Radix Select ────────────────────────────────────────────────────
 function RsvpSelect({ name, value, options, onValueChange, placeholder = "Select a meal" }: any) {
@@ -31,9 +42,74 @@ function RsvpSelect({ name, value, options, onValueChange, placeholder = "Select
   )
 }
 
+// ── Reusable Radix Radio ────────────────────────────────────────────────────
+function RsvpRadioCard({
+  name,
+  selected,
+  options,
+  onValueChange,
+}: any) {
+  return (
+    <RadioGroup.Root
+      className="rsvp-card-group"
+      name={name}
+      value={selected ?? ""}
+      onValueChange={onValueChange}
+    >
+      {options.map((option: any) => (
+        <label
+          key={option.value}
+          className={`rsvp-card ${
+            selected === option.value ? "selected" : ""
+          }`}
+        >
+          <div className="rsvp-card-header">
+            <div className="rsvp-card-left">
+              <RadioGroup.Item
+                value={option.value}
+                className="rsvp-radio-indicator-root"
+              >
+                <RadioGroup.Indicator asChild>
+                  <span className="rsvp-radio-dot" />
+                </RadioGroup.Indicator>
+              </RadioGroup.Item>
+
+              <div className="rsvp-card-text">
+                <div className="rsvp-card-title">
+                  {option.label}
+                </div>
+
+                {option.description && (
+                  <div className="rsvp-card-description">
+                    {option.description}
+                  </div>
+                )}
+              </div>
+            </div>
+
+            {option.onView && (
+              <button
+                type="button"
+                className="rsvp-card-view"
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                  option.onView();
+                }}
+              >
+                👁 View
+              </button>
+            )}
+          </div>
+        </label>
+      ))}
+    </RadioGroup.Root>
+  );
+}
+
 // ── Main component ───────────────────────────────────────────────────────────
 export default function CollapsibleSection(props: any) {
-  const i = 1
+  // const i = 1
   const [opened, setOpen] = useState(true)
 
   const menuSelectionOption = []
@@ -59,15 +135,20 @@ export default function CollapsibleSection(props: any) {
           <>
             {/* Mains */}
             <div className="rsvp-field">
-              <label className="rsvp-label">{t("form.course_mains")}</label>
-              <RsvpSelect
+              <label className="rsvp-label">{t("form.course_mains")} </label>
+              <RsvpRadioCard
                 name="mains"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_chicken_chou_farci")}`}
-                value={props.mains}
-                onValueChange={(value: any) => props.onchange('mains', value)}
+                selected={props.mains}
+                onValueChange={(value:any)=>props.onchange("mains", value)}
                 options={[
-                  { value: "fish", label: t("form.dish_chicken_chou_farci") },
-                  { value: "mushroom", label: t("form.dish_mushroom_pasta") },
+                    {
+                        value:"fish",
+                        label:t("form.dish_fish_chips")+t("form.default_prefix"),
+                    },
+                    {
+                        value:"mushroom",
+                        label:t("form.dish_mushroom_pasta"),
+                    }
                 ]}
               />
             </div>
@@ -75,12 +156,16 @@ export default function CollapsibleSection(props: any) {
             {/* Dessert */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_dessert")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="dessert"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_wild_berries_sorbet")}`}
-                value={props.dessert}
-                onValueChange={(value: any) => props.onchange('dessert', value)}
-                options={[{ value: "sorbet", label: t("form.dish_chocolate_sorbet") }]}
+                selected={props.dessert}
+                onValueChange={(value:any)=>props.onchange("dessert", value)}
+                options={[
+                    {
+                        value:"sorbet",
+                        label:t("form.dish_chocolate_sorbet")+t("form.default_prefix"),
+                    }
+                ]}
               />
             </div>
           </>
@@ -91,38 +176,51 @@ export default function CollapsibleSection(props: any) {
             {/* Hot Appetizer */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_hot_appetizer")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="hot-appetizer"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_scallop_ikura")}`}
-                value={props.hotAppetizer}
-                onValueChange={(value: any) => props.onchange('hotAppetizer', value)}
-                options={[{ value: "nuggets", label: t("form.dish_chicken_nuggets") }]}
+                selected={props.hotAppetizer}
+                onValueChange={(value:any)=>props.onchange("hotAppetizer", value)}
+                options={[
+                    {
+                        value:"nuggets",
+                        label:t("form.dish_chicken_nuggets")+t("form.default_prefix"),
+                    }
+                ]}
               />
             </div>
 
             {/* Soup */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_soup")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="soup"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_lobster_bisque")}`}
-                value={props.soup}
-                onValueChange={(value: any) => props.onchange('soup', value)}
-                options={[{ value: "mushroom", label: t("form.dish_mushroom_veloute") }]}
+                selected={props.soup}
+                onValueChange={(value:any)=>props.onchange("soup", value)}
+                options={[
+                    {
+                        value:"mushroom",
+                        label:t("form.dish_mushroom_veloute")+t("form.default_prefix"),
+                    }
+                ]}
               />
             </div>
 
             {/* Mains */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_mains")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="mains"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_chicken_chou_farci")}`}
-                value={props.mains}
-                onValueChange={(value: any) => props.onchange('mains', value)}
+                selected={props.mains}
+                onValueChange={(value:any)=>props.onchange("mains", value)}
                 options={[
-                  { value: "fish", label: t("form.dish_fish_chips") },
-                  { value: "mushroom", label: t("form.dish_mushroom_pasta") },
+                    {
+                        value:"fish",
+                        label:t("form.dish_fish_chips")+t("form.default_prefix"),
+                    },
+                    {
+                        value:"mushroom",
+                        label:t("form.dish_mushroom_pasta"),
+                    }
                 ]}
               />
             </div>
@@ -130,12 +228,16 @@ export default function CollapsibleSection(props: any) {
             {/* Dessert */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_dessert")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="dessert"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_wild_berries_sorbet")}`}
-                value={props.dessert}
-                onValueChange={(value: any) => props.onchange('dessert', value)}
-                options={[{ value: "sorbet", label: t("form.dish_chocolate_sorbet") }]}
+                selected={props.dessert}
+                onValueChange={(value:any)=>props.onchange("dessert", value)}
+                options={[
+                    {
+                        value:"sorbet",
+                        label:t("form.dish_chocolate_sorbet")+t("form.default_prefix"),
+                    }
+                ]}
               />
             </div>
           </>
@@ -145,14 +247,23 @@ export default function CollapsibleSection(props: any) {
           <>
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_cold_starter")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="cold-starter"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_crab_avocado")}`}
-                value={props.coldStarter}
-                onValueChange={(value: any) => props.onchange('coldStarter', value)}
+                selected={props.coldStarter}
+                onValueChange={(value:any)=>props.onchange("coldStarter", value)}
                 options={[
-                  { value: "cold-starter-1", label: t("form.dish_crab_avocado") },
-                  { value: "cold-starter-2", label: t("form.dish_beetroot_avocado") },
+                    {
+                        value:"cold-starter-1",
+                        label:t("form.dish_crab_avocado")+t("form.default_prefix"),
+                        description:t("form.desc_crab_avocado"),
+                        onView:()=>props.onOpenImage(starter1)
+                    },
+                    {
+                        value:"cold-starter-2",
+                        label:t("form.dish_beetroot_avocado"),
+                        description:t("form.desc_beetroot_avocado"),
+                        onView:()=>props.onOpenImage(starter2)
+                    }
                 ]}
               />
             </div>
@@ -160,14 +271,23 @@ export default function CollapsibleSection(props: any) {
             {/* Hot Appetizer */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_hot_appetizer")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="hot-appetizer"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_scallop_ikura")}`}
-                value={props.hotAppetizer}
-                onValueChange={(value: any) => props.onchange('hotAppetizer', value)}
+                selected={props.hotAppetizer}
+                onValueChange={(value:any)=>props.onchange("hotAppetizer", value)}
                 options={[
-                  { value: "hot-appetizer-1", label: t("form.dish_scallop_ikura") },
-                  { value: "hot-appetizer-2", label: t("form.dish_mushroom_scallop") },
+                    {
+                        value:"hot-appetizer-1",
+                        label:t("form.dish_scallop_ikura")+t("form.default_prefix"),
+                        description:t("form.desc_scallop_ikura"),
+                        onView:()=>props.onOpenImage(appetizer1)
+                    },
+                    {
+                        value:"hot-appetizer-2",
+                        label:t("form.dish_mushroom_scallop"),
+                        description:t("form.desc_mushroom_scallop"),
+                        onView:()=>props.onOpenImage(appetizer2)
+                    }
                 ]}
               />
             </div>
@@ -175,14 +295,23 @@ export default function CollapsibleSection(props: any) {
             {/* Soup */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_soup")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="soup"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_lobster_bisque")}`}
-                value={props.soup}
-                onValueChange={(value: any) => props.onchange('soup', value)}
+                selected={props.soup}
+                onValueChange={(value:any)=>props.onchange("soup", value)}
                 options={[
-                  { value: "soup-1", label: t("form.dish_lobster_bisque") },
-                  { value: "soup-2", label: t("form.dish_mushroom_soup") },
+                    {
+                        value:"soup-1",
+                        label:t("form.dish_lobster_bisque"),
+                        description:t("form.desc_lobster_bisque"),
+                        onView:()=>props.onOpenImage(soup1)
+                    },
+                    {
+                        value:"soup-2",
+                        label:t("form.dish_mushroom_soup")+t("form.default_prefix"),
+                        description:t("form.desc_mushroom_soup"),
+                        onView:()=>props.onOpenImage(soup2)
+                    }
                 ]}
               />
             </div>
@@ -190,14 +319,23 @@ export default function CollapsibleSection(props: any) {
             {/* Mains */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_mains")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="mains"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_chicken_chou_farci")}`}
-                value={props.mains}
-                onValueChange={(value: any) => props.onchange('mains', value)}
+                selected={props.mains}
+                onValueChange={(value:any)=>props.onchange("mains", value)}
                 options={[
-                  { value: "mains-1", label: t("form.dish_chicken_chou_farci") },
-                  { value: "mains-2", label: t("form.dish_salmon") },
+                    {
+                        value:"mains-1",
+                        label:t("form.dish_chicken_chou_farci")+t("form.default_prefix"),
+                        description:t("form.desc_chicken_chou_farci"),
+                        onView:()=>props.onOpenImage(mains2)
+                    },
+                    {
+                        value:"mains-2",
+                        label:t("form.dish_salmon"),
+                        description:t("form.desc_salmon"),
+                        onView:()=>props.onOpenImage(mains1)
+                    }
                 ]}
               />
             </div>
@@ -205,14 +343,23 @@ export default function CollapsibleSection(props: any) {
             {/* Dessert */}
             <div className="rsvp-field">
               <label className="rsvp-label">{t("form.course_dessert")}</label>
-              <RsvpSelect
+              <RsvpRadioCard
                 name="dessert"
-                placeholder={`${t("form.default_prefix")} ${t("form.dish_wild_berries_sorbet")}`}
-                value={props.dessert}
-                onValueChange={(value: any) => props.onchange('dessert', value)}
+                selected={props.dessert}
+                onValueChange={(value:any)=>props.onchange("dessert", value)}
                 options={[
-                  { value: "dessert-1", label: t("form.dish_mango_savarin") },
-                  { value: "dessert-2", label: t("form.dish_wild_berries_sorbet") },
+                    {
+                        value:"dessert-1",
+                        label:t("form.dish_mango_savarin")+t("form.default_prefix"),
+                        description:t("form.desc_mango_savarin"),
+                        onView:()=>props.onOpenImage(dessert1)
+                    },
+                    {
+                        value:"dessert-2",
+                        label:t("form.dish_wild_berries_sorbet"),
+                        description:t("form.desc_wild_berries_sorbet"),
+                        onView:()=>props.onOpenImage(dessert2)
+                    }
                 ]}
               />
             </div>
@@ -246,56 +393,38 @@ export default function CollapsibleSection(props: any) {
 
         <Collapsible.Content className="rsvp-box">
           <div className="rsvp-content">
-            {/* Attendance — Radix RadioGroup */}
-            <div className="rsvp-field">
-              <label className="rsvp-label">{t("form.attending_label")}</label>
-              <RadioGroup.Root className="rsvp-radio-group" name={`attending-${i}`} value={props.attending} onValueChange={(value) => props.onchange('attending', value)}>
-                {[
-                  { value: "yes", label: t("form.attending_yes") },
-                  { value: "no",  label: t("form.attending_no") },
-                ].map(({ value, label }) => (
-                  <label key={value} className="rsvp-radio-item">
-                    <RadioGroup.Item value={value} className="rsvp-radio-indicator-root">
-                      <RadioGroup.Indicator asChild>
-                        <span className="rsvp-radio-dot" />
-                      </RadioGroup.Indicator>
-                    </RadioGroup.Item>
-                    <span>{label}</span>
-                  </label>
-                ))}
-              </RadioGroup.Root>
-            </div>
-
-            {/* Menu Selection */}
-            {props.attending === "yes" && (
-              <>
-                <div className="rsvp-field">
+            {props.isChild === true && (
+              <div className="rsvp-field">
+                <div style={{ display: "flex", justifyContent: "space-between", alignContent: "center" }}>
                   <label className="rsvp-label">{t("form.menu_selection_label")}</label>
-                  <RsvpSelect
-                    name="menu-selection"
-                    value={props.menuSelection}
-                    onValueChange={(value: any) => props.onchange('menuSelection', value)}
-                    options={menuSelectionOption}
-                    placeholder={t("form.menu_placeholder")}
-                  />
+                  <a className="text-hyperlink" onClick={() => props.onOpenImage(weddingMenuChild)}>{t('form.menu_kids')}</a>
                 </div>
-
-                {/* Cold Starter */}
-                {renderMenuSelect()}
-
-                {/* Dietary Requirements — native input (no Radix TextField in core) */}
-                <div className="rsvp-field">
-                  <label className="rsvp-label">{t("form.dietary_label")}</label>
-                  <input
-                    className="rsvp-input"
-                    value={props.dietaryRestriction}
-                    onChange={(e) => props.onchange('dietaryRestriction', e.target.value)}
-                    type="text"
-                    placeholder={t("form.dietary_placeholder")}
-                  />
-                </div>
-              </>
+                <RsvpSelect
+                  name="menu-selection"
+                  value={props.menuSelection}
+                  onValueChange={(value: any) => props.onchange('menuSelection', value)}
+                  options={menuSelectionOption}
+                  placeholder={t("form.menu_placeholder")}
+                />
+              </div>
             )}
+
+            {/* Menu Selection Fields */}
+            {(props.isChild === undefined || props.isChild === null || (props.isChild === true && props.menuSelection)) && (
+              renderMenuSelect()
+            )}
+
+            {/* Dietary Requirements — native input (no Radix TextField in core) */}
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.dietary_label")}</label>
+              <input
+                className="rsvp-input"
+                value={props.dietaryRestriction}
+                onChange={(e) => props.onchange('dietaryRestriction', e.target.value)}
+                type="text"
+                placeholder={t("form.dietary_placeholder")}
+              />
+            </div>
           </div>
         </Collapsible.Content>
       </Collapsible.Root>

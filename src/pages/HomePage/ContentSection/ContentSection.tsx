@@ -50,17 +50,16 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
       <CountdownTimer targetDate={eventTime}/>
     </ContentCard>
     <ContentCard>
-      <p className="address-header">Header</p>
+      <p className="address-header">OUR STORY</p>
       <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
     </ContentCard>
     <ContentCard>
-      <p className="address-header" style={{ position: "sticky", top: "10%"}}>Header</p>
       <img src={poloroid1} style={{ marginBottom: 50, position: "sticky", top: "15%" }} onClick={()=>openImage?.(poloroid1)}/>
       <img src={poloroid2} style={{ marginBottom: 50, position: "sticky", top: "15%" }} onClick={()=>openImage?.(poloroid2)}/>
       <img src={poloroid3} style={{ marginBottom: 50, position: "sticky", top: "15%" }} onClick={()=>openImage?.(poloroid3)}/>
     </ContentCard>
     <ContentCard>
-      <p className="address-header">Header</p>
+      <p className="address-header">TIDBIT</p>
       <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
     </ContentCard>
     <ContentCard type='photo'>
@@ -71,11 +70,11 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
       />
     </ContentCard>
     <ContentCard>
-      <p className="address-header">Header</p>
+      <p className="address-header">DIRECTION</p>
       <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
     </ContentCard>
     <ContentCard>
-      <p className="address-header">Header</p>
+      <p className="address-header">IMPORTANT TO NOTE</p>
       <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
     </ContentCard>
     <ContentCard type='photo'>
