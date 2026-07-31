@@ -14,6 +14,7 @@ import image1 from "../../../assets/shoes.png"
 import poloroid1 from "../../../assets/image (3).png"
 import poloroid2 from "../../../assets/image (4).png"
 import poloroid3 from "../../../assets/image (5).png"
+import LocationMap from '../../../components/LocationMap'
 
 
 /* ── prop ───────────────────────────────────────────────────────── */
@@ -70,12 +71,39 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
       />
     </ContentCard>
     <ContentCard>
-      <p className="address-header">DIRECTION</p>
-      <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
+      <p className="address-header">Getting to Vineyard @ Hortpark</p>
+      <p className="text-header" style={{ textAlign: "justify" }}>*You are recommended to come earlier to enjoy a scenic stroll through the park*</p>
+      <p className="text-header" style={{ textAlign: "center" }}><strong>🚇 By MRT & Bus</strong></p>
+      <p className="text-header" style={{ textAlign: "justify" }}><strong>A. Labrador Park MRT (CC27):</strong> Take Exit A. Walk through the sheltered walk way to Alexandra Retail Ctr bus stop. Board Bus 51, 61, 93, 97, 100, 120, 166 or 963. Alight 2 stops later at Aft HortPark stop on Alexandra Road. Walk 5 minutes down Hyderabad Road to the park entrance.</p>
+      <p className="text-header" style={{ textAlign: "justify" }}><strong>B. Queenstown MRT (EW19):</strong> Take Exit A/D. Walk to the bus stop right outside the Queenstown Stn Ext A/D.  Board Bus 51 or 111 and alight at Bef Telok Blangah Hill Park along Alexandra Road. Cross the road via overhead bridge to Hortpark side and walk down Hyderabad Road into Hortpark.</p>
+      <p className="text-header" style={{ textAlign: "justify" }}><strong>C. HarbourFront MRT (NE1/CC29):</strong> Go to the bus interchange. Board Bus 61, 100, or 166 and alight at Aft Hortpark stop.</p>
+      <p className="text-header" style={{ textAlign: "center" }}><strong>🚌 By Direct Bus</strong></p>
+      <p className="text-header" style={{ textAlign: "justify" }}>You can take any of these buses directly to Alexandra Road, alighting at either the Aft Hortpark stop or Bef Telok Blangah Hill.</p>
+      <p className="text-header" style={{ textAlign: "justify" }}>Bus numbers: 51, 61, 93, 97, 100, 120, 166, 963.</p>
+      <p className="text-header" style={{ textAlign: "center" }}><strong>🚌 By Car</strong></p>
+      <p className="text-header" style={{ textAlign: "justify" }}>Access the park via Alexandra Road and turn into Hyderabad Road.</p>
+      <p className="text-header" style={{ textAlign: "justify" }}>Parking: The park has an on-site paid parking lot ($0.60 per 30 mins or $0.02 per min) with 149 car lots and accessible parking spaces.</p>
+      <LocationMap address="Vineyard @ Hortpark, Singapore"/>
     </ContentCard>
     <ContentCard>
-      <p className="address-header">IMPORTANT TO NOTE</p>
-      <p className="text-header" style={{ textAlign: "justify" }}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur finibus neque in nibh iaculis interdum. Ut congue ac turpis et tincidunt. Quisque placerat mattis tortor a eleifend. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pretium elit nisi, vitae maximus ipsum interdum eget. Vestibulum at ornare felis. Fusce accumsan magna fermentum feugiat tempus. Integer tristique pellentesque dapibus. Curabitur sit amet sem commodo, sagittis nunc ac, interdum lacus. Nulla vel elit sollicitudin, molestie sapien at, aliquam erat. Etiam non lorem non dolor accumsan sagittis feugiat et magna.</p>
+      <p className="address-header">Notes to all guests (Please read carefully!)</p>
+      <p className="text-header" style={{ textAlign: "justify" }}>Due to the wedding venue (Vineyard @ Hortpark) being subjected to restrictions and stipulations imposed by the National Parks Board (NParks):</p>
+      <ul>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>No scattering of flower petals or confetti is allowed within Hortpark (a cleaning fee of $500++ will be imposed if otherwise)</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>The carpark is managed by NPark. The automated gates of the car-park at HortPark will be locked after 11PM daily, and vehicales can only be retrieved the next morning after 7AM.</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>HortPark is a non-smoking national park. There is no designated smoking area within the park and smokers are liable to any fines imposed if caught smoking in the park.</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>No open flames (sparkles, lighters, candles) are allowed in HortPark and within the Restaurant's function spaces.</p></li>
+      </ul>
+    </ContentCard>
+    <ContentCard>
+      <p className="address-header">致所有宾客（请仔细阅读）</p>
+      <p className="text-header" style={{ textAlign: "justify" }}>由于婚礼场地 (Vineyard @ Hortpark) 受国家公园局（NParks）的限制和规定约束，特此说明：</p>
+      <ul>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>园艺园内禁止撒花瓣或彩纸屑（如有违反，将收取500新元++的清洁费）。</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>停车场由国家公园局管理。园艺园停车场的自动闸门每日晚上11点后关闭，车辆只能于次日早上7点后取回。</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>园艺园为无烟国家公园。园内没有指定的吸烟区，吸烟者如被发现吸烟，将承担相应的罚款。</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>园艺园及餐厅的宴会厅内禁止使用明火（包括烟花、打火机、蜡烛等）。</p></li>
+      </ul>
     </ContentCard>
     <ContentCard type='photo'>
         <img
