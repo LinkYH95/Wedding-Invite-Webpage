@@ -15,8 +15,8 @@ import RsvpLoader from "../../components/Loader";
 import { useImageModal } from "../../components/ImageModalContext";
 /* ── import assets ──────────────────────────────────────────────── */
 import hero1 from "../../assets/DSC_2754.png"
-import weddingMenu from "../../assets/Wedding-Menu.png"
-import weddingMenuChild from "../../assets/Wedding-Menu-Child.png"
+// import weddingMenu from "../../assets/Wedding-Menu.png"
+// import weddingMenuChild from "../../assets/Wedding-Menu-Child.png"
 import CodeInputField from "./InvitationCodeInput/InvitationCodeInput";
 
 
@@ -39,7 +39,7 @@ export default function RSVPPage() {
   /* ── Hooks ────────────────────────────────────────────────────── */
   useEffect(() => {
     const codeFromUrl = searchParams.get('code')
-    const lanFromUrl = searchParams.get('zh')
+    const lanFromUrl = searchParams.get('lan')
     if (lanFromUrl === 'zh') {
       i18n.changeLanguage('zh')
     }
@@ -134,10 +134,10 @@ export default function RSVPPage() {
         return (
           <div className="rsvp-step rsvp-step--form">
             <p className="rsvp-instruction">
-              {t('form.welcome')},&nbsp;&nbsp;
+              {t('form.welcome')}&nbsp;&nbsp;
               <strong style={{ fontSize: "var(--text-xl)",textDecoration: 'underline' }}>{inviteDetails.groupName}</strong> <strong style={{ fontSize: "var(--text-xl)" }}>!</strong>
               <br/>{t('form.instruction')}
-              <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>{t('form.menu_adult')}</a> &nbsp;|&nbsp; <a className="text-hyperlink" onClick={() => openImage(weddingMenuChild)}>{t('form.menu_kids')}</a>
+              {/* <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>{t('form.menu_adult')}</a> &nbsp;|&nbsp; <a className="text-hyperlink" onClick={() => openImage(weddingMenuChild)}>{t('form.menu_kids')}</a> */}
             </p>
 
             {inviteDetails.memberCodes.map((guestID: string) => {
@@ -145,7 +145,7 @@ export default function RSVPPage() {
 
               if (!guestDetails) return null;
               return (
-                <CollapsibleSection {...guestDetails} onchange={(field: any, value: any) => updateGuestDetails(guestID, field, value)} key={`Collapsible-field-${guestDetails.id}`}/>
+                <CollapsibleSection {...guestDetails} onOpenImage={(picture: any) => openImage(picture)} onchange={(field: any, value: any) => updateGuestDetails(guestID, field, value)} key={`Collapsible-field-${guestDetails.id}`}/>
               );
             })}
 
@@ -175,7 +175,7 @@ export default function RSVPPage() {
 
       {/* Scrollable middle column */}
       <div className="rsvp-scroll-area" style={{ alignItems: 'center' }}>
-        <div className="rsvp-card">
+        <div className="rsvp-card" style={{ cursor: "default" }}>
 
           {/* Back to home */}
           {step !== "code" && (
@@ -184,7 +184,7 @@ export default function RSVPPage() {
             </button>
           )}
 
-          <button onClick={() => i18n.changeLanguage(isEn ? 'zh' : 'en')} style={{ float: "inline-end" }}>
+          <button onClick={() => i18n.changeLanguage(isEn ? 'zh' : 'en')} style={{ float: "inline-end", cursor: "pointer" }}>
             {isEn ? '中文' : 'EN'}
           </button>
 

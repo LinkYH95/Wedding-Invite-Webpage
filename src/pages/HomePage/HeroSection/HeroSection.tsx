@@ -4,10 +4,10 @@ import './HeroSection.css'
 import { useNavigate } from 'react-router-dom'
 /* ── import assets ──────────────────────────────────────────────── */
 import hero1 from "../../../assets/DSC_2754.png"
-import hero2 from "../../../assets/DSC_6346.jpg"
-import hero3 from "../../../assets/DSC_6409.jpg"
-import hero4 from "../../../assets/DSC_2800.jpg"
-import { useEffect, useState } from 'react'
+// import hero2 from "../../../assets/DSC_6346.jpg"
+// import hero3 from "../../../assets/DSC_6409.jpg"
+// import hero4 from "../../../assets/DSC_2800.jpg"
+// import { useEffect, useState } from 'react'
 
 
 /* ── prop ───────────────────────────────────────────────────────── */
@@ -15,48 +15,47 @@ type HeroSectionProps = {
 	eventTime: Date
 }
 
-const images = [hero1, hero2, hero3, hero4]
-const thresholds = [0, 0.25, 0.5, 0.75]
+// const images = [hero1, hero2, hero3, hero4]
+// const thresholds = [0, 0.25, 0.5, 0.75]
 
 
 export default function HeroSection({ eventTime }: HeroSectionProps) {
   const navigate = useNavigate()
-  const [activeIndex, setActiveIndex] = useState(0)
+  // const [activeIndex, setActiveIndex] = useState(0)
 
-  useEffect(() => {
-    const handleScoll = () => {
-      const scrolled = window.scrollY
-      const totalHeight = document.documentElement.scrollHeight - window.innerHeight
+  // useEffect(() => {
+  //   const handleScoll = () => {
+  //     const scrolled = window.scrollY
+  //     const totalHeight = document.documentElement.scrollHeight - window.innerHeight
 
-      if (totalHeight <= 0) return
+  //     if (totalHeight <= 0) return
 
-      const progress = scrolled / totalHeight
+  //     const progress = scrolled / totalHeight
 
-      let next = 0
-      for (let i = thresholds.length - 1; i >= 0; i--) {
-        if (progress >= thresholds[i]) { next = i; break }
-      }
+  //     let next = 0
+  //     for (let i = thresholds.length - 1; i >= 0; i--) {
+  //       if (progress >= thresholds[i]) { next = i; break }
+  //     }
 
-      setActiveIndex(next)
-    }
+  //     setActiveIndex(next)
+  //   }
 
-    window.addEventListener('scroll', handleScoll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScoll)
-  }, [])
+  //   window.addEventListener('scroll', handleScoll, { passive: true })
+  //   return () => window.removeEventListener('scroll', handleScoll)
+  // }, [])
 
   return (
     <section className="hero-section">
       <div className="hero-image-panel">
 
-        {images.map((src, i) => (
+        {/* {images.map((src, i) => ( */}
           <img
-            key={i}
-            src={src}
-            alt={`Wedding hero ${i + 1}`}
-            className={`hero-image-slide ${i === activeIndex ? 'hero-image-active' : ''}`}
-            style={i === 2 ? { objectPosition: 'center 20%'} : undefined}
+            // key={i}
+            src={hero1}
+            alt={`Wedding hero`}
+            className={`hero-image`}
           />
-        ))}
+        {/* ))} */}
 
         <div className="hero-image-box">
           <div className="hero-image-overlay">

@@ -189,3 +189,87 @@ html::-webkit-scrollbar-thumb {
 }
 .rsvp-input:focus { border-color: var(--rsvp-gold); box-shadow: 0 0 var(--space-2xs) var(--space-2xs) rgba(177, 168, 128, 0.25); }
 .rsvp-input::placeholder { color: var(--color-placeholder); }
+
+/* ── RadioCard input ─────────────────────────────────────────────────── */
+.rsvp-card-group{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
+
+.rsvp-card{
+    display:block;
+    /* border:1px solid #ddd; */
+    background-color: var(--color-cream);
+    border-radius:12px;
+    padding:14px 16px;
+    cursor:pointer;
+    transition:.2s;
+}
+
+.rsvp-card:hover{
+    filter: brightness(0.95);
+}
+
+.rsvp-card.selected{
+    border:2px solid var(--color-brown);
+}
+
+.rsvp-card-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    gap:16px;
+}
+
+.rsvp-card-left{
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.rsvp-card-radio{
+    width:18px;
+    height:18px;
+    border-radius:50%;
+    border:2px solid #b99862;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-shrink:0;
+}
+
+.rsvp-card-dot{
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    background:#b99862;
+}
+
+.rsvp-card-title{
+    font-weight:600;
+}
+
+.rsvp-card-description{
+    margin-top:4px;
+    font-size:.9rem;
+    color:#414141;
+}
+
+.rsvp-card-view{
+    border:none;
+    background:none;
+    color: var(--color-brown);
+    width: 38px;
+    cursor:pointer;
+    font-size:.9rem;
+}
+
+.text-hyperlink {
+  color: var(--color-hyperlink);
+  cursor: pointer;
+}
+.text-hyperlink:hover {
+  filter: brightness(1.5);
+  text-decoration: underline;
+}
