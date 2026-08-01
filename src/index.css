@@ -16,7 +16,7 @@
 
   /* ── Typography ──────────────────────────────────────────── */
   --font-heading: "Cormorant Garamond", 'Noto Serif SC', serif;
-  --font-body:    "Cormorant Garamond", 'Noto Serif SC', serif;
+  --font-body:    "Lora", 'Noto Serif SC', serif;
   --font-cursive: "Great Vibes", 'Noto Serif SC', cursive;
 
   --text-xs:   clamp(0.7rem,  1.2vw, 0.78rem);  /* labels */

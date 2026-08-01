@@ -19,8 +19,9 @@ type HeroSectionProps = {
 // const thresholds = [0, 0.25, 0.5, 0.75]
 
 
-export default function HeroSection({ eventTime }: HeroSectionProps) {
+export default function HeroSection({ }: HeroSectionProps) {
   const navigate = useNavigate()
+  const RSVPTime = new Date("2026-10-01T18:00:00+08:00")
   // const [activeIndex, setActiveIndex] = useState(0)
 
   // useEffect(() => {
@@ -70,8 +71,8 @@ export default function HeroSection({ eventTime }: HeroSectionProps) {
           </div>
 
           <div className="hero-overlay-actions">
-            <span className="rsvp-deadline">{`RSVP by ${eventTime.toLocaleDateString("en-SG", { year: 'numeric', month: 'long', day: 'numeric' })}`}</span>
-            <button className="primary-button" onClick={() => navigate('/rsvp')}>RSVP</button>
+            <span className="rsvp-deadline">{`RSVP by ${RSVPTime.toLocaleDateString("en-SG", { year: 'numeric', month: 'long', day: 'numeric' })}`}</span>
+            <button className="primary-button" onClick={() => navigate('/rsvp')}>Menu Selection</button>
           </div>
         </div>
 
