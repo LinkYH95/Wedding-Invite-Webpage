@@ -1,7 +1,7 @@
 /* ── import styles ──────────────────────────────────────────────── */
 import './HeroSection.css'
 /* ── import external libraries ──────────────────────────────────── */
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 /* ── import assets ──────────────────────────────────────────────── */
 import hero1 from "../../../assets/DSC_2754.png"
 // import hero2 from "../../../assets/DSC_6346.jpg"
@@ -20,7 +20,7 @@ type HeroSectionProps = {
 
 
 export default function HeroSection({ }: HeroSectionProps) {
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
   const RSVPTime = new Date("2026-10-01T18:00:00+08:00")
   // const [activeIndex, setActiveIndex] = useState(0)
 
