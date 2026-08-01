@@ -72,7 +72,7 @@ export default function HeroSection({ }: HeroSectionProps) {
 
           <div className="hero-overlay-actions">
             <span className="rsvp-deadline">{`RSVP by ${RSVPTime.toLocaleDateString("en-SG", { year: 'numeric', month: 'long', day: 'numeric' })}`}</span>
-            <button className="primary-button" onClick={() => navigate('/rsvp')}>Menu Selection</button>
+            {/* <button className="primary-button" onClick={() => navigate('/rsvp')}>Menu Selection</button> */}
           </div>
         </div>
 
