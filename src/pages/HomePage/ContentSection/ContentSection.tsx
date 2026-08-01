@@ -41,15 +41,15 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
         <button className="primary-button" onClick={() => navigate('/rsvp')}>Menu Selection</button>
       </div>
     </ContentCard>
+    <ContentCard>
+      <CountdownTimer targetDate={eventTime}/>
+    </ContentCard>
     <ContentCard type='photo'>
       <img
         src={image2}
         alt="Wedding photo 1"
         className="wedding-photo"
       />
-    </ContentCard>
-    <ContentCard>
-      <CountdownTimer targetDate={eventTime}/>
     </ContentCard>
     <ContentCard>
       <p className="address-header">OUR STORY</p>

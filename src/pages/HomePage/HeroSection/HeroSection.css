@@ -59,7 +59,7 @@
 .hero-overlay-text {
   margin: 0;
   line-height: 1.5;
-  font-size: clamp(1rem, 1.3vw, 1.5rem);
+  font-size: clamp(0.9rem, 1.3vw, 1.5rem);
 }
 
 .hero-overlay-actions {
