@@ -87,7 +87,7 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
       <p className="text-header" style={{ textAlign: "center" }}><strong>🚌 By Direct Bus</strong></p>
       <p className="text-header" style={{ textAlign: "justify" }}>Take any of these buses directly to Alexandra Road, alighting at either the Aft Hortpark stop or Bef Telok Blangah Hill.</p>
       <p className="text-header" style={{ textAlign: "justify" }}><strong>Bus numbers:</strong> 51, 61, 93, 97, 100, 120, 166, 963.</p>
-      <p className="text-header" style={{ textAlign: "center" }}><strong>🚌 By Car</strong></p>
+      <p className="text-header" style={{ textAlign: "center" }}><strong>🚗 By Car</strong></p>
       <p className="text-header" style={{ textAlign: "justify" }}>Access the park via Alexandra Road and turn into Hyderabad Road.</p>
       <p className="text-header" style={{ textAlign: "justify" }}><strong>Parking:</strong> The park has an on-site paid parking lot ($0.60 per 30 mins or $0.02 per min) with 149 car lots and accessible parking spaces.</p>
       <LocationMap address="Vineyard @ Hortpark, Singapore"/>
@@ -98,7 +98,7 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
       <p className="text-header" style={{ textAlign: "justify" }}>Due to the wedding venue (Vineyard @ Hortpark) being subjected to restrictions and stipulations imposed by the National Parks Board (NParks):</p>
       <ul>
         <li><p className="text-header" style={{ textAlign: "justify" }}>No scattering of flower petals or confetti is allowed within Hortpark (a cleaning fee of $500++ will be imposed if otherwise)</p></li>
-        <li><p className="text-header" style={{ textAlign: "justify" }}>The carpark is managed by NPark. The automated gates of the car-park at HortPark will be locked after 11PM daily, and vehicales can only be retrieved the next morning after 7AM.</p></li>
+        <li><p className="text-header" style={{ textAlign: "justify" }}>The carpark is managed by NPark. The automated gates of the car-park at HortPark will be locked after 11PM daily, and vehicles can only be retrieved the next morning after 7AM.</p></li>
         <li><p className="text-header" style={{ textAlign: "justify" }}>HortPark is a non-smoking national park. There is no designated smoking area within the park and smokers are liable to any fines imposed if caught smoking in the park.</p></li>
         <li><p className="text-header" style={{ textAlign: "justify" }}>No open flames (sparkles, lighters, candles) are allowed in HortPark and within the Restaurant's function spaces.</p></li>
       </ul>
