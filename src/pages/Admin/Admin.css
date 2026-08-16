@@ -220,6 +220,10 @@
 .placeholder {
   opacity: 0.5;
 }
+
+.admin-cell-dirty {
+  background: var(--color-error);
+}
  
 /* ── Select ──────────────────────────────────────────────────── */
 .admin-select {

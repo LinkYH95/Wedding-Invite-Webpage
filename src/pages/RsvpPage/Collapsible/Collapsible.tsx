@@ -47,6 +47,7 @@ function RsvpRadioCard({
   name,
   selected,
   options,
+  disabled,
   onValueChange,
 }: any) {
   return (
@@ -54,6 +55,7 @@ function RsvpRadioCard({
       className="rsvp-card-group"
       name={name}
       value={selected ?? ""}
+      disabled={disabled}
       onValueChange={onValueChange}
     >
       {options.map((option: any) => (
@@ -68,6 +70,7 @@ function RsvpRadioCard({
               <RadioGroup.Item
                 value={option.value}
                 className="rsvp-radio-indicator-root"
+                disabled={disabled}
               >
                 <RadioGroup.Indicator asChild>
                   <span className="rsvp-radio-dot" />
@@ -335,7 +338,110 @@ export default function CollapsibleSection(props: any) {
                         label:t("form.dish_salmon"),
                         description:t("form.desc_salmon"),
                         onView:()=>props.onOpenImage(mains1)
+                    },
+                    {
+                        value:"mains-3",
+                        label:t("form.dish_beef"),
+                        description:t("form.desc_beef"),
                     }
+                ]}
+              />
+            </div>
+
+            {/* Dessert */}
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.course_dessert")}</label>
+              <RsvpRadioCard
+                name="dessert"
+                selected={props.dessert}
+                onValueChange={(value:any)=>props.onchange("dessert", value)}
+                options={[
+                    {
+                        value:"dessert-1",
+                        label:t("form.dish_mango_savarin")+t("form.default_prefix"),
+                        description:t("form.desc_mango_savarin"),
+                        onView:()=>props.onOpenImage(dessert1)
+                    },
+                    {
+                        value:"dessert-2",
+                        label:t("form.dish_wild_berries_sorbet"),
+                        description:t("form.desc_wild_berries_sorbet"),
+                        onView:()=>props.onOpenImage(dessert2)
+                    }
+                ]}
+              />
+            </div>
+          </>
+        )
+      case "veg-5-course":
+        return (
+          <>
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.course_cold_starter")}</label>
+              <RsvpRadioCard
+                name="cold-starter"
+                selected={"cold-starter-2"}
+                disabled
+                options={[
+                    {
+                        value:"cold-starter-2",
+                        label:t("form.dish_beetroot_avocado"),
+                        description:t("form.desc_beetroot_avocado"),
+                        onView:()=>props.onOpenImage(starter2)
+                    }
+                ]}
+              />
+            </div>
+
+            {/* Hot Appetizer */}
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.course_hot_appetizer")}</label>
+              <RsvpRadioCard
+                name="hot-appetizer"
+                selected={props.hotAppetizer}
+                disabled
+                options={[
+                    {
+                        value:"hot-appetizer-2",
+                        label:t("form.dish_mushroom_scallop"),
+                        description:t("form.desc_mushroom_scallop"),
+                        onView:()=>props.onOpenImage(appetizer2)
+                    }
+                ]}
+              />
+            </div>
+
+            {/* Soup */}
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.course_soup")}</label>
+              <RsvpRadioCard
+                name="soup"
+                selected={props.soup}
+                disabled
+                options={[
+                    {
+                        value:"soup-2",
+                        label:t("form.dish_mushroom_soup"),
+                        description:t("form.desc_mushroom_soup"),
+                        onView:()=>props.onOpenImage(soup2)
+                    }
+                ]}
+              />
+            </div>
+
+            {/* Mains */}
+            <div className="rsvp-field">
+              <label className="rsvp-label">{t("form.course_mains")}</label>
+              <RsvpRadioCard
+                name="mains"
+                selected={props.mains}
+                disabled
+                options={[
+                    {
+                        value:"mains-4",
+                        label:t("form.dish_vegetarian"),
+                        description:t("form.desc_vegetarian"),
+                    },
                 ]}
               />
             </div>
@@ -370,6 +476,7 @@ export default function CollapsibleSection(props: any) {
     } 
   }
 
+  console.log({...props})
   return (
     <>
       {/* Inject styles once */}

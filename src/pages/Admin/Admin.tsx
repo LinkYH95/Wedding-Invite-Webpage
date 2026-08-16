@@ -1,5 +1,5 @@
 import "./Admin.css";
-import hero1 from "../../assets/DSC_2754.png"
+import hero1 from "../../assets/DSC_2754.webp"
 import { useEffect, useState } from "react";
 import { onAuthStateChanged, type User, } from "firebase/auth";
 import AdminLogin from "./AdminLogin";

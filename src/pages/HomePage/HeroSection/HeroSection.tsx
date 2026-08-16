@@ -3,7 +3,7 @@ import './HeroSection.css'
 /* ── import external libraries ──────────────────────────────────── */
 // import { useNavigate } from 'react-router-dom'
 /* ── import assets ──────────────────────────────────────────────── */
-import hero1 from "../../../assets/DSC_2754.png"
+import hero1 from "../../../assets/DSC_2754.webp"
 // import hero2 from "../../../assets/DSC_6346.jpg"
 // import hero3 from "../../../assets/DSC_6409.jpg"
 // import hero4 from "../../../assets/DSC_2800.jpg"

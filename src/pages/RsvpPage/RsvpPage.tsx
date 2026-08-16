@@ -14,7 +14,7 @@ import RsvpLoader from "../../components/Loader";
 /* ── import context / hooks ─────────────────────────────────────── */
 import { useImageModal } from "../../components/ImageModalContext";
 /* ── import assets ──────────────────────────────────────────────── */
-import hero1 from "../../assets/DSC_2754.png"
+import hero1 from "../../assets/DSC_2754.webp"
 // import weddingMenu from "../../assets/Wedding-Menu.png"
 // import weddingMenuChild from "../../assets/Wedding-Menu-Child.png"
 import CodeInputField from "./InvitationCodeInput/InvitationCodeInput";
@@ -59,10 +59,10 @@ export default function RSVPPage() {
       return;
     }
 
-    if (trimmedCode === "ADMIN") {
-      setStep("admin");
-      return;
-    }
+    // if (trimmedCode === "ADMIN") {
+    //   setStep("admin");
+    //   return;
+    // }
 
     try {
       setStep("fetching");
