@@ -197,6 +197,10 @@ html::-webkit-scrollbar-thumb {
     gap:12px;
 }
 
+.rsvp-card-group[data-disabled]{
+  opacity: 0.5;
+}
+
 .rsvp-card{
     display:block;
     /* border:1px solid #ddd; */
@@ -213,6 +217,12 @@ html::-webkit-scrollbar-thumb {
 
 .rsvp-card.selected{
     border:2px solid var(--color-brown);
+}
+
+.rsvp-radio-indicator-root[data-disabled] {
+  border-color: var(--color-border);
+  background: var(--color-cream-dark);
+  cursor: not-allowed;
 }
 
 .rsvp-card-header{

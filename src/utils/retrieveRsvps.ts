@@ -80,7 +80,7 @@ export const getInviteGroupWithRsvps = async (
       guestName: data.guestName,
       isChild: data.isChild,
       attending: "yes",
-      menuSelection: data.isChild ? data.menuSelection : "adult-5-course",
+      menuSelection: data.isChild ? data.menuSelection : data.menuSelection || "adult-5-course",
       coldStarter: data.coldStarter,
       hotAppetizer: data.hotAppetizer,
       soup: data.soup,

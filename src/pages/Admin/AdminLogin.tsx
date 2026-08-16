@@ -1,7 +1,7 @@
 import "./Admin.css";
 import { signInWithGoogle } from "../../utils/googleLogin";
 import { useNavigate } from "react-router-dom";
-import hero1 from "../../assets/DSC_2754.png"
+import hero1 from "../../assets/DSC_2754.webp"
 
 
 export default function AdminLogin() {
@@ -37,7 +37,7 @@ export default function AdminLogin() {
               <h2 className="admin-title">Admin Login</h2>
            
               <button className="admin-submit" style={{ marginBottom: 20 }}>
-                <h3 className="button-text-dark" onClick={handleLogin}>Sign in with Google</h3>
+                <h3 className="button-text-dark" onClick={handleLogin}>Sign in with Google hi</h3>
               </button>
             </div>
           </div>
