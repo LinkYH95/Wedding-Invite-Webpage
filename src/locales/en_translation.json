@@ -13,7 +13,8 @@
   },
   "form": {
     "welcome": "Welcome,",
-    "instruction": "Please fill in the selection below. \n Note: If nothing is selected, we will choose the default menu for you.",
+    "instruction": "Please fill in the selection below.",
+    "note": "Note: If nothing is selected, we will choose the default menu for you.",
     "menu_adult": "View adult menu",
     "menu_kids": "View child menu",
     "submit": "Submit RSVP",

@@ -137,6 +137,7 @@ export default function RSVPPage() {
               {t('form.welcome')}&nbsp;&nbsp;
               <strong style={{ fontSize: "var(--text-xl)",textDecoration: 'underline' }}>{inviteDetails.groupName}</strong> <strong style={{ fontSize: "var(--text-xl)" }}>!</strong>
               <br/>{t('form.instruction')}
+              <br/><span className="rsvp-note">{t('form.note')}</span>
               {/* <br/><a className="text-hyperlink" onClick={() => openImage(weddingMenu)}>{t('form.menu_adult')}</a> &nbsp;|&nbsp; <a className="text-hyperlink" onClick={() => openImage(weddingMenuChild)}>{t('form.menu_kids')}</a> */}
             </p>
 

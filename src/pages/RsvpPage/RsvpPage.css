@@ -137,6 +137,14 @@
   font-weight: bold;
 }
 
+.rsvp-note {
+  font-size: var(--text-sm);
+  color: var(--color-brown-light);
+  text-align: center;
+  line-height: 1.6;
+  font-weight: bold;
+}
+
 .text-hyperlink {
   color: var(--color-hyperlink);
   cursor: pointer;
