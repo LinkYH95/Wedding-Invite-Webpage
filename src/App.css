@@ -37,6 +37,7 @@
   font-size: var(--text-sm);
   border: none;
   cursor: pointer;
+  margin-bottom: var(--space-lg);
   transition: background 0.2s ease, transform 0.2s ease;
 }
 
