@@ -39,6 +39,7 @@ export default function ContentSection({ eventTime }: ContentSectionProp) {
         <h1 className="date-header">{eventTime.toLocaleDateString("en-SG", { weekday: 'long' })}<br/>{eventTime.toLocaleDateString("en-SG", { year: 'numeric', month: 'long', day: 'numeric' })}</h1>
         <p className="address-header">Vineyard @ Hortpark</p>
         <button className="primary-button" onClick={() => navigate('/rsvp')}>Menu Selection</button>
+        <p className="text-header" style={{ whiteSpace: 'pre-wrap' }}>{`Solemnisation: 5.30pm\nDinner Banquet: 6.30pm\nDress Code: Smart Casual`}</p>
       </div>
     </ContentCard>
     <ContentCard>
