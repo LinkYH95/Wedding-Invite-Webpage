@@ -165,7 +165,7 @@ export default function RSVPPage({rsvpTime}: RsvpPageProp) {
             })}
 
             {/* Submit */}
-            <button className="rsvp-cancel" onClick={() => alert("The RSVP form has been closed and finalised for submission. Please contact the Bride or Groom if you wish to make any changes.")}>
+            <button className="rsvp-cancel" onClick={() => handleSubmitRSVP()}>
               <h3 className="button-text-light">{t('form.submit')}</h3>
             </button>
           </div>
