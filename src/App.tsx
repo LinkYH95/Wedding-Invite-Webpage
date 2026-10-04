@@ -13,6 +13,7 @@ import { ImageModalProvider } from './components/ImageModalContext';
 export default function App() {
   /* ── Constants ────────────────────────────────────────────────── */
   const eventTime = new Date("2026-10-25T18:00:00+08:00")
+  const rsvpDeadline = new Date("2026-10-01T23:59:00+08:00")
 
   /* ── Render ───────────────────────────────────────────────────── */
   return (
@@ -20,7 +21,7 @@ export default function App() {
       <ImageModalProvider>
         <Routes>
           <Route path='/' element={<HomePage eventTime={eventTime}/>}/>
-          <Route path='/rsvp' element={<RSVPPage />}/>
+          <Route path='/rsvp' element={<RSVPPage rsvpTime={rsvpDeadline}/>}/>
           <Route path='/admin' element={<AdminPage />}/>
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

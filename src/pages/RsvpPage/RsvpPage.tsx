@@ -23,7 +23,13 @@ import CodeInputField from "./InvitationCodeInput/InvitationCodeInput";
 /* ── Types ──────────────────────────────────────────────────────── */
 type Step = "code" | "form" | "admin" | "fetching" | "saving" | "";
 
-export default function RSVPPage() {
+
+/* ── prop ───────────────────────────────────────────────────────── */
+type RsvpPageProp = {
+	rsvpTime: Date
+}
+
+export default function RSVPPage({rsvpTime}: RsvpPageProp) {
   /* ── Constant ─────────────────────────────────────────────────── */
   const { openImage } = useImageModal()
   const [step, setStep] = useState<Step>("code");
@@ -82,6 +88,14 @@ export default function RSVPPage() {
 
   const handleSubmitRSVP = async () => {
     setError("");
+    const now = new Date().getTime();
+    const target = rsvpTime.getTime();
+
+    if (now > target) {
+      return (
+        alert("This form has been finalised and closed. Please contact the Bride or Groom if you have any request.")
+      )
+    }
 
     if (!inviteDetails?.rsvps) {
       setError(t('rsvp.error_no_details'));
